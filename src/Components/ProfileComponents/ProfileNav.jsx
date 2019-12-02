@@ -6,11 +6,11 @@ class ProfileNav extends React.Component {
         dropdownOpen: false
     }
   render() {
-    return (
-      <div className="justify-content-end col-4">
+    return (<>
+      <div className="">
         <ButtonDropdown isOpen={this.state.dropdownOpen} >
-        
-          <DropdownToggle onClick={() => this.setState({ dropdownOpen: !this.state.dropdownOpen})} caret>Add Profile Section</DropdownToggle>
+          <DropdownToggle onClick={() => this.setState({ dropdownOpen: !this.state.dropdownOpen})} 
+          caret className="dropdownbtns">Add Profile Section</DropdownToggle>
           <DropdownMenu>
             <DropdownItem header>Intro</DropdownItem>
             <DropdownItem disabled>About</DropdownItem>
@@ -22,9 +22,9 @@ class ProfileNav extends React.Component {
             <DropdownItem>Supported languages/DropdownItem></DropdownItem>
           </DropdownMenu>
         </ButtonDropdown>
-        <Button>More...</Button>
       </div>
-    );
+       <div><Button id="morebtn">More...</Button></div>
+    </>);
   }
 }
 
