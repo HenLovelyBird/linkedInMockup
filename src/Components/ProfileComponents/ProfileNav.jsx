@@ -4,7 +4,7 @@ import { Button, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } fr
 class ProfileNav extends React.Component {
   render() {
     return (
-      <div className="justify-content-end col-1">
+      <div className="justify-content-end col-4">
         <ButtonDropdown>
         {/* isOpen={dropdownOpen} */}
           <DropdownToggle caret>Add Profile Section</DropdownToggle>
