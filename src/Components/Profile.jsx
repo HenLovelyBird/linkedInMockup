@@ -1,13 +1,14 @@
 import React from 'react';
-import ProfileHeader from './ProfileHeader';
-import AboutUs from './AboutUs';
+import ProfileHeader from './ProfileComponents/ProfileHeader';
+import AboutUs from './ProfileComponents/AboutUs';
 import ProfileModal from './ProfileModal';
 import {Button} from 'reactstrap';
 
 class Profile extends React.Component {
     state = {
         profile: {},
-        modalOpen: false
+        modalOpen: false,
+        dropdownOpen: false
     }
     render() {
         return (
@@ -40,3 +41,4 @@ class Profile extends React.Component {
 }
 
 export default Profile;
+
