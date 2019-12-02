@@ -61,7 +61,7 @@ class Navigation extends React.Component {
                     <NavLink href="#">Me</NavLink>
                     </div>
                  </NavItem>
-                 <div class="vl"></div>
+                 <div className="vl"></div>
                  <NavItem>
                      <div className="nav-item-div">
                      <FontAwesomeIcon className="nav-icon" icon={faTh}/>

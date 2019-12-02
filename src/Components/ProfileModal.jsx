@@ -1,15 +1,20 @@
 import React from 'react';
-import {Modal, ModalHeader, ModalBody, Button} from 'reactstrap';
+import {Modal, Button} from 'reactstrap';
+import UpdateForm from './UpdateForm';
 
 class ProfileModal extends React.Component {
+    state = {
+        modalOpen: true
+    }
     render() {
+        console.log(this.props)
         return (
-           
-            <Modal isOpen={this.props.open} toClose={this.props.close}> 
-              <ModalHeader>{this.props.profile.name}</ModalHeader>
-              <ModalBody>{this.props.profile.bio}</ModalBody>
-              <Button onClick={() => this.setState({ modalOpen: false})}>Back to Profile</Button>
-            </Modal>
+            <>
+            {this.state.modalOpen && <Modal isOpen={this.props.open} toclose={this.props.close}> 
+            <UpdateForm profileInfo={this.props.profile} />
+            <Button onClick={this.props.setmodal}>Back to Profile</Button>
+          </Modal>}
+            </>
         );
     }
 }
