@@ -40,27 +40,27 @@ class UpdateForm extends React.Component {
           </FormGroup>
           <FormGroup>
             <Label for="examplePassword">Bio</Label>
-            <Input type="password" onChange={this.updateObj} name="password" id="bio" placeholder={this.props.profileInfo.bio} />
+            <Input type="text" onChange={this.updateObj} name="password" id="bio" placeholder={this.props.profileInfo.bio} />
           </FormGroup>
           <FormGroup>
             <Label for="examplePassword">Name</Label>
-            <Input type="password" onChange={this.updateObj} name="password" id="name" placeholder={this.props.profileInfo.name} />
+            <Input type="text" onChange={this.updateObj} name="password" id="name" placeholder={this.props.profileInfo.name} />
           </FormGroup>
           <FormGroup>
             <Label for="examplePassword">Surname</Label>
-            <Input type="password" onChange={this.updateObj} name="password" id="surname" placeholder={this.props.profileInfo.surname} />
+            <Input type="text" onChange={this.updateObj} name="password" id="surname" placeholder={this.props.profileInfo.surname} />
           </FormGroup>
           <FormGroup>
             <Label for="examplePassword">Area</Label>
-            <Input type="password" onChange={this.updateObj} name="password" id="area" placeholder={this.props.profileInfo.area} />
+            <Input type="text" onChange={this.updateObj} name="password" id="area" placeholder={this.props.profileInfo.area} />
           </FormGroup>
           <FormGroup>
             <Label for="examplePassword">Title</Label>
-            <Input type="password" onChange={this.updateObj} name="password" id="title" placeholder={this.props.profileInfo.title} />
+            <Input type="text" onChange={this.updateObj} name="password" id="title" placeholder={this.props.profileInfo.title} />
           </FormGroup>
           <FormGroup>
             <Label for="examplePassword">ImageUrl</Label>
-            <Input type="password" onChange={this.updateObj} name="password" id="image" placeholder={this.props.profileInfo.image} />
+            <Input type="text" onChange={this.updateObj} name="password" id="image" placeholder={this.props.profileInfo.image} />
           </FormGroup>
           <Input
                     id="submitBtn"
