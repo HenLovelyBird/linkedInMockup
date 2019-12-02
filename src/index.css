@@ -6,12 +6,78 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-#NavTop {
+.search-div{
+  width: 426px;
+}
+.search-input{
+  width: 280px;
+  height:34px;
+  padding: 0px 8px 0px 28px;
+  margin-top: 8px;
+}
+.input-group-text{
+  background-color: #E0E9EF !important;
+  padding: 5px 5px;
+  border: none !important;
+}
+.main-input{
+  background-color: #E0E9EF;
+  border: none;
+}
+.icon-search{
+  color:gray;
+  font-size: 20px;
+}
+.nav-item-div{
+  width: 80px;
   color: white;
+  font-size: 12px;
+  text-align: center;
+  margin: 8px 0px 0px;
+}
+.nav-top{
+  padding: 0px 20px;
+}
+.nav-link{
+  padding: 0px !important;
+  color:rgba(255,255,255,0.7)
+}
+.nav-link:hover, .nav-icon:hover{
+  color:white;
+}
+.sapa{
+  border-radius: 50%;
+}
+.nav-icon{
+  font-size: 20px;
+  color: rgba(255,255,255,0.5)
+}
+.nav{
+  margin: 0px 86.5px;
+}
+.linkedin-icon{
+  margin-left: 50px;
+  font-size: 40px;
+  /* background: #0074BB ; */
+}
+.nav-top {
+  background-color:#233E4C !important;
+}
+.vl {
+  border-left: 1px solid white;
+  height: 51px;
+}
+.profile-image-div{
+  background-image: url("/assets/img/sapa.jpg");
+  background-size: cover;
+  margin-left: 27px !important;
+  border-radius: 50%;
+  border:0.5px solid white;
+  width: 24px;
+  height: 24px;
+  align-self: center;
 }
