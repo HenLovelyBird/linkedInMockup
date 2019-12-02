@@ -11,7 +11,7 @@ class Profile extends React.Component {
             <div className="my5">
             <h2>{this.props.profile.name}{this.props.profile.surname}</h2>
             <img src={this.props.profile.image} alt="profile pic" id="profilepic"/>
-            <ProfileNav onClick={() => this.setState({dropdownOpen: true})}/>
+            <ProfileNav />
             </div>
         </>);
     }
