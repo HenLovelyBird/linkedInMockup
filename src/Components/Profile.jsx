@@ -9,14 +9,26 @@ class Profile extends React.Component {
         profile: {},
         modalOpen: false
     }
+    setModal = () => {
+        if(this.state.modalOpen === true){
+            this.setState({
+                modalOpen: false
+            })
+        } else if (this.state.modalOpen === false){
+            this.setState({
+                modalOpen: true
+            })
+        }
+    }
+
     render() {
         return (
             <div>
                 {this.state.profile? <>
                 <ProfileHeader profile={this.state.profile} /> 
                 <AboutUs aboutUs={this.state.profile.bio} /> </> : <div>Profile Loading...</div>}
-                <Button onClick={() => this.setState({modalOpen: true})}>Edit Profile</Button>
-                <ProfileModal profile={this.state.profile} open={this.state.modalOpen} close={this.state.modalOpen}/>
+                <Button onClick={this.setModal}>Edit Profile</Button>
+                {this.state.modalOpen && <><ProfileModal setmodal={this.setModal} profile={this.state.profile} open={this.state.modalOpen} /></>}
             </div>
            );
     }

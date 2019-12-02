@@ -49,6 +49,9 @@ code {
 .nav-link:hover, .nav-icon:hover{
   color:white;
 }
+.update-form{
+  padding: 30px 20px;
+}
 .sapa{
   border-radius: 50%;
 }
