@@ -16,7 +16,7 @@ class Profile extends React.Component {
                 <ProfileHeader profile={this.state.profile} /> 
                 <AboutUs aboutUs={this.state.profile.bio} /> </> : <div>Profile Loading...</div>}
                 <Button onClick={() => this.setState({modalOpen: true})}>Edit Profile</Button>
-                <ProfileModal profile={this.state.profile} open={this.state.modalOpen} />
+                <ProfileModal profile={this.state.profile} open={this.state.modalOpen} close={this.state.modalOpen}/>
             </div>
            );
     }
