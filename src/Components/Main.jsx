@@ -2,7 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {Container} from 'reactstrap';
 import Navbar from './Navbar';
-import ProfileHeader from './ProfileHeader';
+import Profile from './Profile';
 
 class Main extends React.Component {
     render() {
@@ -10,7 +10,7 @@ class Main extends React.Component {
             <Router>
             <Navbar />
             <Container>
-                <Route path="/ProfileHeader" exact component={ProfileHeader} />
+                <Route path="/Profile" component={Profile} />
             </Container>   
         </Router>
         );
