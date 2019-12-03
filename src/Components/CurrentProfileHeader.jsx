@@ -30,7 +30,7 @@ class CurrentProfileHeader extends Component {
         return ( 
             <Col md="8 mt-3" style={mainBoxStyle}>
                 <div style={divStyle}></div>
-                <img style={userImgStyle} src={this.props.userData.image} alt=""/>
+                {this.props.userData.image ? <img style={userImgStyle} src={this.props.userData.image} alt=""/> : <img style={userImgStyle} src="https://www.legalniewsieci.pl/!data/newsy/news_1982.jpg" /> }
                 <div className="user-info-current-profile-header">
                     <h4>{this.props.userData.name} {this.props.userData.surname}</h4>
                     <p style={{margin: "5px 0px"}}>{this.props.userData.title}</p>
