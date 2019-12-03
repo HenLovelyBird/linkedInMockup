@@ -28,7 +28,7 @@ class ProfileModal extends React.Component {
                 <div className="edit-profile-text">Edit Profile</div>
                 <FontAwesomeIcon style={styleIcon} onClick={this.props.setmodal} icon={faTimes} />
             </div>
-            <UpdateForm profileInfo={this.props.profile} />
+            <UpdateForm closeModal={this.props.setmodal} profileInfo={this.props.profile} />
           </Modal>}
             </>
         );
