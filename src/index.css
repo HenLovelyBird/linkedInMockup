@@ -217,14 +217,17 @@ code {
   padding-right: 6px;
   padding-left: -42px;
   background-image: url(https://miro.medium.com/max/1124/1*92adf06PCF91kCYu1nPLQg.jpeg);
-  background-size: cover;
-  background-position: center;
+  background-size: 100%;
+  background-position: top;
   background-repeat: no-repeat;
+  border: solid rgb(164, 162, 162);
 }
 
 .dottedboxes {
   border: dotted rgb(164, 162, 162);
-  margin-left: -9%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+ 
 }
 
 .fapencilbio {
@@ -233,7 +236,6 @@ code {
 }
 
 .aboutuscontainer {
-  margin-left: -8%;
   margin-top: 4%;
   border: solid rgb(164, 162, 162);
 }
@@ -241,5 +243,5 @@ code {
 .experiencecontainer {
   border: solid rgb(164, 162, 162);
   margin-top: 4%;
-  margin-left: -8%;
 }
+

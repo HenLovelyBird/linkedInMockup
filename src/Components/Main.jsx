@@ -12,7 +12,7 @@ class Main extends React.Component {
             <Router>
             <Navigation />
             
-            <Container>
+            <Container className="parentcontainer">
                 <Route path="/Profile" component={Profile} />
                 <Route path="/currentUserPage:userId" component={CurrentUserPage} />
             </Container>   
