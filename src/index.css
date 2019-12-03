@@ -84,3 +84,8 @@ code {
   height: 24px;
   align-self: center;
 }
+
+#profilepic {
+  border-radius: 50%;
+  border-style: solid white; 
+}

@@ -10,17 +10,20 @@ class UpdateForm extends React.Component {
 
     updateObj = (ev) => {
         let input = ev.target.value
+        console.log("value", input)
         let idInput = ev.target.id
+        console.log("id", idInput)
         this.state.profile[idInput] = input
         console.log(this.state)
     }
 
-    handleSubmit = async() => {
+    handleSubmit = async(event) => {
+      event.preventDefault()
       let username = "user16"
       let password = "c9WEUxMS294hN6fF"
       let token = btoa(username + ":" + password)
-      let response = await fetch("https://striveschool.herokuapp.com/api/profiles/", {
-          method: "POST",
+      let response = await fetch("https://striveschool.herokuapp.com/api/profiles/" + username, {
+          method: "PUT",
           bode: JSON.stringify(this.state),
           headers: {
               "Authorization": "Basic " + token,
@@ -33,7 +36,7 @@ class UpdateForm extends React.Component {
     render() { 
       console.log(this.state)
         return ( 
-            <Form className="update-form" onsubmit="handleSubmit()">
+            <Form className="update-form" onSubmit={this.handleSubmit}>
             <FormGroup>
             <Label for="exampleEmail">Email</Label>
             <Input type="email" onChange={this.updateObj} name="email" id="email" placeholder={this.props.profileInfo.email} />
