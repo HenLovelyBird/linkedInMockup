@@ -25,7 +25,7 @@ class UpdateForm extends React.Component {
       let token = btoa(username + ":" + password)
       let response = await fetch("https://striveschool.herokuapp.com/api/profiles/" + username, {
           method: "PUT",
-          bode: JSON.stringify(this.state),
+          body: JSON.stringify(this.state.profile),
           headers: {
               "Authorization": "Basic " + token,
               "Content-Type" : "application/json"
@@ -82,6 +82,7 @@ class UpdateForm extends React.Component {
                   type="submit"
                   class="btn btn-succes"
                   value="SAVE"
+                  onClick={this.props.closeModal}
               />
         </Form>
         </div>

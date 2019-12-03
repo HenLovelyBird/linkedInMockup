@@ -21,16 +21,12 @@ class CurrentUserPage extends React.Component {
          );
     }
     componentDidMount = () => {
-        setTimeout(() => {
-            this.fetchingCurrentUser()
-        }, 1500)
+        this.fetchingCurrentUser()
     }
 
     componentDidUpdate = (prevProps, prevState) => {
         if (prevProps.match.params.userId !== this.props.match.params.userId){
-            setTimeout(() => {
-                this.fetchingCurrentUser()
-            }, 1000)
+            this.fetchingCurrentUser()
         }
     }
 
@@ -50,10 +46,12 @@ class CurrentUserPage extends React.Component {
         })
         let prof = await response.json()
         console.log(prof);
-        this.setState({
-            profile: prof,
-            loading: false
-        })
+        setTimeout(() => {
+            this.setState({
+                profile: prof,
+                loading: false
+            })
+        }, 1500)
     }
 }
  
