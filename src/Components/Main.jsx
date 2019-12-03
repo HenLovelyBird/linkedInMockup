@@ -4,6 +4,7 @@ import {Container} from 'reactstrap';
 import Navigation from './Navigation';
 import Profile from './Profile';
 
+
 class Main extends React.Component {
     render() {
         return (
@@ -11,7 +12,6 @@ class Main extends React.Component {
             <Navigation />
             <Container>
                 <Route path="/Profile" component={Profile} />
-                <Route path="/AboutUs" component={AboutUs} />
             </Container>   
         </Router>
         );

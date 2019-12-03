@@ -37,6 +37,10 @@ class Profile extends React.Component {
            <BottomProfile />
                 
            </Container>
+
+           <AboutUs />
+
+           <Experience />
            
            </>);
     }
