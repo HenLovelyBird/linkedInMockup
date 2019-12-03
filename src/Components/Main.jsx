@@ -11,6 +11,7 @@ class Main extends React.Component {
             <Navigation />
             <Container>
                 <Route path="/Profile" component={Profile} />
+                <Route path="/AboutUs" component={AboutUs} />
             </Container>   
         </Router>
         );

@@ -2,8 +2,9 @@ import React from 'react';
 import ProfileHeader from './ProfileComponents/ProfileHeader';
 import AboutUs from './ProfileComponents/AboutUs';
 import ProfileModal from './ProfileModal';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPencilAlt} from '@fortawesome/free-solid-svg-icons'
+import {Container} from 'reactstrap';
+import BottomProfile from './ProfileComponents/BottomProfile';
+
 
 class Profile extends React.Component {
     state = {
@@ -25,20 +26,17 @@ class Profile extends React.Component {
 
     render() {
         return (<>
+        <Container flex id="profilecontainer">
             <div>
                 {this.state.profile && 
-               <div><ProfileHeader profile={this.state.profile} />
-                
-               <FontAwesomeIcon onClick={this.setModal} 
-                className="fapencil" 
-                icon={faPencilAlt}/></div>}
+               <div><ProfileHeader profile={this.state.profile} /></div>}
                 
                 <div>{this.state.modalOpen && <ProfileModal 
-                setmodal={this.setModal} profile={this.state.profile} open={this.state.modalOpen} />}</div>
-            
+                setmodal={this.setModal} profile={this.state.profile} open={this.state.modalOpen} />}</div> 
            </div>
-                 <div><AboutUs aboutUs={this.state.profile.bio} /> : <div>Profile Loading...</div>}</div>
-           
+           <BottomProfile />
+                
+           </Container>
            
            </>);
     }

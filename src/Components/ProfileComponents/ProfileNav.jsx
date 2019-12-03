@@ -19,7 +19,7 @@ class ProfileNav extends React.Component {
             <DropdownItem>Skills</DropdownItem>
             <DropdownItem>Accomplishments</DropdownItem>
             <DropdownItem>Additional information</DropdownItem>
-            <DropdownItem>Supported languages/DropdownItem></DropdownItem>
+            <DropdownItem>Supported languages</DropdownItem>
           </DropdownMenu>
         </ButtonDropdown>
       </div>

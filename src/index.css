@@ -123,7 +123,7 @@ code {
 #profilepic {
   border-radius: 50%;
   border: solid rgb(164, 162, 162); 
-  position: absolute;
+  position: fixed;
   top: 8%;
   left: 10%;
 
@@ -134,15 +134,15 @@ code {
 }
 
 .dropdownbtns {
-  margin-top: 78%;
+  margin-top: -25%;
   margin-left: 340%;
   border-radius: 0%;
 }
 
 #morebtn {
   position: relative;
-  margin-top: -6%;
-  margin-left: 71%;
+  margin-top: -8%;
+  margin-left: 72%;
   border-radius: 0%;
 }
 
@@ -153,7 +153,22 @@ code {
 }
 
 #profname {
-  margin-top: 2%;
-  margin-left: -3%;
+  margin-top: -3%;
+  margin-left: -4%;
   position: absolute;
+}
+
+.fapencil{
+  margin-left: 81%;
+  margin-top: 14%;
+}
+
+#profilecontainer{
+  padding-right: 6px;
+  padding-left: -42px;
+  border: solid, rgb(164, 162, 162);
+}
+
+.dottedboxes {
+  border: dotted rgb(164, 162, 162);
 }
