@@ -2,7 +2,8 @@ import React from 'react';
 import ProfileHeader from './ProfileComponents/ProfileHeader';
 import AboutUs from './ProfileComponents/AboutUs';
 import ProfileModal from './ProfileModal';
-import {Button} from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPencilAlt} from '@fortawesome/free-solid-svg-icons'
 
 class Profile extends React.Component {
     state = {
@@ -23,15 +24,23 @@ class Profile extends React.Component {
     }
 
     render() {
-        return (
+        return (<>
             <div>
-                {this.state.profile? <>
-                <ProfileHeader profile={this.state.profile} /> 
-                <AboutUs aboutUs={this.state.profile.bio} /> </> : <div>Profile Loading...</div>}
-                <div><Button onClick={this.setModal} id="editbtn">Edit Profile</Button></div>
-                {this.state.modalOpen && <><ProfileModal setmodal={this.setModal} profile={this.state.profile} open={this.state.modalOpen} /></>}
-            </div>
-           );
+                {this.state.profile && 
+               <div><ProfileHeader profile={this.state.profile} />
+                
+               <FontAwesomeIcon onClick={this.setModal} 
+                className="fapencil" 
+                icon={faPencilAlt}/></div>}
+                
+                <div>{this.state.modalOpen && <ProfileModal 
+                setmodal={this.setModal} profile={this.state.profile} open={this.state.modalOpen} />}</div>
+            
+           </div>
+                 <div><AboutUs aboutUs={this.state.profile.bio} /> : <div>Profile Loading...</div>}</div>
+           
+           
+           </>);
     }
     componentDidMount = async () => {
         let username = "user16"
