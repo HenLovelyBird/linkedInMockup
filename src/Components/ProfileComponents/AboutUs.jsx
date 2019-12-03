@@ -7,14 +7,19 @@ class AboutUs extends React.Component {
   
   render() {
     return (
-        <Container flex className="my-5">
-          <div>{this.props.profileBio}</div>
-
-          <FontAwesomeIcon
+        <Container flex className="">
+            <div>
+                <h3>Biography</h3>
+            </div>
+            
+            <FontAwesomeIcon
             onClick={this.setModal}
-            className="fapencil"
+            className="fapencilbio"
             icon={faPencilAlt}
           />
+            <div>{this.props.profileBio}</div>
+
+         
         </Container>
     );
   }

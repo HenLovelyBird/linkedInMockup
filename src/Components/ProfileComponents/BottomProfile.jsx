@@ -8,12 +8,13 @@ class BottomProfile extends React.Component {
             <Container fluid className="dottedboxes">
                 <div className="my-2">
                     <wrap>
-                    <h4>Show recruiters you're open</h4><p>to job opportunities-you control who sees this</p>
+                    <h5>Show recruiters you're open</h5><p>to job opportunities-you control who sees this</p>
                     </wrap>
                 </div>
+                <br/>
                 <div className="my-5">
                     <wrap>
-                    <h4>Showcase services</h4><p>you offer so you and your business can be found in search.</p>
+                    <h5>Showcase services</h5><p>you offer so you and your business can be found in search.</p>
                     </wrap>
                 </div>
             </Container>

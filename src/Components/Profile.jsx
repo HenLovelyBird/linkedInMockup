@@ -35,14 +35,21 @@ class Profile extends React.Component {
                 <div>{this.state.modalOpen && <ProfileModal 
                 setmodal={this.setModal} profile={this.state.profile} open={this.state.modalOpen} />}</div> 
            </div>
-           <BottomProfile />
-                
+           <BottomProfile />   
            </Container>
 
-           {this.state.profile.bio ? 
-           <><AboutUs profileBio={this.state.profile.bio}/></> : <><div>Bio empty!</div></>}        
-
-           <Experience />
+          
+                {this.state.profile.bio ? 
+                    <><Container flex className="aboutuscontainer">
+                        <AboutUs profileBio={this.state.profile.bio}/></Container></> : 
+                        <><div>Bio empty!</div></>}
+                                
+                 
+                 
+            <Container flex className="experiencecontainer">
+                <Experience/>
+            </Container>
+           
            
            </>);
     }
