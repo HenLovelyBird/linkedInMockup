@@ -5,6 +5,8 @@ import ProfileModal from './ProfileModal';
 import {Container} from 'reactstrap';
 import BottomProfile from './ProfileComponents/BottomProfile';
 import Experience from './Experience';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPencilAlt } from "@fortawesome/free-solid-svg-icons";
 
 
 class Profile extends React.Component {
@@ -35,6 +37,11 @@ class Profile extends React.Component {
                 <div>{this.state.modalOpen && <ProfileModal 
                 setmodal={this.setModal} profile={this.state.profile} open={this.state.modalOpen} />}</div> 
            </div>
+           <FontAwesomeIcon
+            onClick={this.setModal}
+            className="fapencilbio"
+            icon={faPencilAlt}
+          />
            <BottomProfile />   
            </Container>
 

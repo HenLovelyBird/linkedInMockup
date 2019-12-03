@@ -11,6 +11,7 @@ class Main extends React.Component {
         return (
             <Router>
             <Navigation />
+            
             <Container>
                 <Route path="/Profile" component={Profile} />
                 <Route path="/currentUserPage:userId" component={CurrentUserPage} />

@@ -162,9 +162,8 @@ code {
 #profilepic {
   border-radius: 50%;
   border: solid rgb(164, 162, 162); 
-  position: absolute;
-  top: 8%;
-  left: 8%;
+  width: 100%;
+  height: 100%;
 
 }
 
@@ -217,7 +216,10 @@ code {
 #profilecontainer{
   padding-right: 6px;
   padding-left: -42px;
-  /* border: solid, rgb(164, 162, 162); this is not showing up */
+  background-image: url(https://miro.medium.com/max/1124/1*92adf06PCF91kCYu1nPLQg.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .dottedboxes {
