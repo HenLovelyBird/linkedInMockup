@@ -7,6 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(240, 240, 240);
 }
 .edit-profile-text {
   font-size: 20px;
@@ -163,7 +164,7 @@ code {
   border: solid rgb(164, 162, 162); 
   position: absolute;
   top: 8%;
-  left: 10%;
+  left: 8%;
 
 }
 
@@ -172,15 +173,15 @@ code {
 }
 
 .dropdownbtns {
-  margin-top: 78%;
+  margin-top: -25%;
   margin-left: 340%;
   border-radius: 0%;
 }
 
 #morebtn {
   position: relative;
-  margin-top: -6%;
-  margin-left: 71%;
+  margin-top: -8%;
+  margin-left: 72%;
   border-radius: 0%;
 }
 
@@ -191,10 +192,13 @@ code {
 }
 
 #profname {
-  margin-top: 2%;
-  margin-left: -3%;
+  margin-top: -3%;
+  margin-left: -4%;
   position: absolute;
 }
+
+/*modalFaina*/
+
 .dropdown-menu.show {
   position: absolute !important;
   top: -40px !important;
@@ -203,4 +207,37 @@ code {
   border: 0.5px solid gray !important;
   width: 600px !important;
   border-radius: 0px;
+}
+
+.fapencil{
+  margin-left: 81%;
+  margin-top: 14%;
+}
+
+#profilecontainer{
+  padding-right: 6px;
+  padding-left: -42px;
+  /* border: solid, rgb(164, 162, 162); this is not showing up */
+}
+
+.dottedboxes {
+  border: dotted rgb(164, 162, 162);
+  margin-left: -9%;
+}
+
+.fapencilbio {
+  margin-left: 93%;
+
+}
+
+.aboutuscontainer {
+  margin-left: -8%;
+  margin-top: 4%;
+  border: solid rgb(164, 162, 162);
+}
+
+.experiencecontainer {
+  border: solid rgb(164, 162, 162);
+  margin-top: 4%;
+  margin-left: -8%;
 }

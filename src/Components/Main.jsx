@@ -5,6 +5,7 @@ import Navigation from './Navigation';
 import Profile from './Profile';
 import CurrentUserPage from './CurrentUserPage';
 
+
 class Main extends React.Component {
     render() {
         return (

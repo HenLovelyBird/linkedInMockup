@@ -2,7 +2,10 @@ import React from 'react';
 import ProfileHeader from './ProfileComponents/ProfileHeader';
 import AboutUs from './ProfileComponents/AboutUs';
 import ProfileModal from './ProfileModal';
-import {Button} from 'reactstrap';
+import {Container} from 'reactstrap';
+import BottomProfile from './ProfileComponents/BottomProfile';
+import Experience from './Experience';
+
 
 class Profile extends React.Component {
     state = {
@@ -23,15 +26,32 @@ class Profile extends React.Component {
     }
 
     render() {
-        return (
+        return (<>
+        <Container flex id="profilecontainer">
             <div>
-                {this.state.profile? <>
-                <ProfileHeader profile={this.state.profile} /> 
-                <AboutUs aboutUs={this.state.profile.bio} /> </> : <div>Profile Loading...</div>}
-                <div><Button onClick={this.setModal} id="editbtn">Edit Profile</Button></div>
-                {this.state.modalOpen && <><ProfileModal setmodal={this.setModal} profile={this.state.profile} open={this.state.modalOpen} /></>}
-            </div>
-           );
+                {this.state.profile && 
+               <div><ProfileHeader profile={this.state.profile} /></div>}
+                
+                <div>{this.state.modalOpen && <ProfileModal 
+                setmodal={this.setModal} profile={this.state.profile} open={this.state.modalOpen} />}</div> 
+           </div>
+           <BottomProfile />   
+           </Container>
+
+          
+                {this.state.profile.bio ? 
+                    <><Container flex className="aboutuscontainer">
+                        <AboutUs profileBio={this.state.profile.bio}/></Container></> : 
+                        <><div>Bio empty!</div></>}
+                                
+                 
+                 
+            <Container flex className="experiencecontainer">
+                <Experience/>
+            </Container>
+           
+           
+           </>);
     }
     componentDidMount = async () => {
         let username = "user16"
