@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,6 +6,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.edit-profile-text {
+  font-size: 20px;
+  padding: 10px 0px 10px 10px;
+  font-family: 'Roboto', sans-serif;
+  display: inline-block;
+  color:black
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -19,6 +27,9 @@ code {
   padding: 0px 8px 0px 28px;
   margin-top: 8px;
 }
+.modal-div{
+  height: 850px;
+}
 .input-group-text{
   background-color: #E0E9EF !important;
   padding: 5px 5px;
@@ -27,6 +38,15 @@ code {
 .main-input{
   background-color: #E0E9EF;
   border: none;
+}
+.form-control{
+  border: 1px solid black !important;
+}
+#submitBtn{
+  background-color: #0070B7 !important;
+  color:white !important;
+  border: none !important;
+  width: 150px;
 }
 .icon-search{
   color:gray;
@@ -61,6 +81,20 @@ code {
 }
 .nav{
   margin: 0px 86.5px;
+}
+.update-form{
+  position: relative;
+  top: -90px;
+}
+.modal-img{
+  position: relative;
+  top: -100px;
+  left: 40px;
+  width: 160px;
+  border: 4px solid white;
+}
+.modal-bg{
+  width: 498px;
 }
 .linkedin-icon{
   margin-left: 50px;

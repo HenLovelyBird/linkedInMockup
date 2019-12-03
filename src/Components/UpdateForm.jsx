@@ -1,5 +1,6 @@
 import React from 'react';
-import { Form, FormGroup, Label, Input } from 'reactstrap';
+import { Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
+
 import '../index.css'
 
 class UpdateForm extends React.Component {
@@ -36,42 +37,54 @@ class UpdateForm extends React.Component {
     render() { 
       console.log(this.state)
         return ( 
-            <Form className="update-form" onSubmit={this.handleSubmit}>
-            <FormGroup>
-            <Label for="exampleEmail">Email</Label>
-            <Input type="email" onChange={this.updateObj} name="email" id="email" placeholder={this.props.profileInfo.email} />
-          </FormGroup>
+          <div className="modal-div">
+          <div className="flex md-4 mr-5">
+              <img className="modal-bg" src="https://miro.medium.com/max/1124/1*92adf06PCF91kCYu1nPLQg.jpeg" alt="linkedIn background"></img>
+          </div>
+          <img src={this.props.profileInfo.image} className="modal-img" alt="profile pic" id="profilepic"/>
+          <Form className="update-form" onSubmit={this.handleSubmit}>
+          <Row>
+              <Col md="6">
           <FormGroup>
-            <Label for="examplePassword">Bio</Label>
-            <Input type="text" onChange={this.updateObj} name="password" id="bio" placeholder={this.props.profileInfo.bio} />
-          </FormGroup>
+          <Label for="examplePassword">Name</Label>
+          <Input type="text" onChange={this.updateObj} name="password" id="name" placeholder={this.props.profileInfo.name} />
+        </FormGroup>
+        </Col>
+        <Col md="6">
+        <FormGroup>
+          <Label for="examplePassword">Surname</Label>
+          <Input type="text" onChange={this.updateObj} name="password" id="surname" placeholder={this.props.profileInfo.surname} />
+        </FormGroup>
+        </Col>
+        </Row>
+        <FormGroup>
+          <Label for="examplePassword">Bio</Label>
+          <Input type="text" onChange={this.updateObj} name="password" id="bio" placeholder={this.props.profileInfo.bio} />
+        </FormGroup>
           <FormGroup>
-            <Label for="examplePassword">Name</Label>
-            <Input type="text" onChange={this.updateObj} name="password" id="name" placeholder={this.props.profileInfo.name} />
-          </FormGroup>
-          <FormGroup>
-            <Label for="examplePassword">Surname</Label>
-            <Input type="text" onChange={this.updateObj} name="password" id="surname" placeholder={this.props.profileInfo.surname} />
-          </FormGroup>
-          <FormGroup>
-            <Label for="examplePassword">Area</Label>
-            <Input type="text" onChange={this.updateObj} name="password" id="area" placeholder={this.props.profileInfo.area} />
-          </FormGroup>
-          <FormGroup>
-            <Label for="examplePassword">Title</Label>
-            <Input type="text" onChange={this.updateObj} name="password" id="title" placeholder={this.props.profileInfo.title} />
-          </FormGroup>
-          <FormGroup>
-            <Label for="examplePassword">ImageUrl</Label>
-            <Input type="text" onChange={this.updateObj} name="password" id="image" placeholder={this.props.profileInfo.image} />
-          </FormGroup>
-          <Input
-                    id="submitBtn"
-                    type="submit"
-                    class="btn btn-primary"
-                    value="SUBMIT"
-                />
-          </Form>
+          <Label for="exampleEmail">Email</Label>
+          <Input type="email" onChange={this.updateObj} name="email" id="email" placeholder={this.props.profileInfo.email} />
+        </FormGroup>
+        <FormGroup>
+          <Label for="examplePassword">Area</Label>
+          <Input type="text" onChange={this.updateObj} name="password" id="area" placeholder={this.props.profileInfo.area} />
+        </FormGroup>
+        <FormGroup>
+          <Label for="examplePassword">Title</Label>
+          <Input type="text" onChange={this.updateObj} name="password" id="title" placeholder={this.props.profileInfo.title} />
+        </FormGroup>
+        <FormGroup>
+          <Label for="examplePassword">ImageUrl</Label>
+          <Input type="text" onChange={this.updateObj} name="password" id="image" placeholder={this.props.profileInfo.image} />
+        </FormGroup>
+        <Input
+                  id="submitBtn"
+                  type="submit"
+                  class="btn btn-succes"
+                  value="SAVE"
+              />
+        </Form>
+        </div>
         )
     }
     componentDidMount = async() => {
