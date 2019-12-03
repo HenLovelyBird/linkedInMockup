@@ -1,5 +1,6 @@
 import React from 'react';
 import { wrap } from 'module';
+import {Container} from 'reactstrap';
 
 class BottomProfile extends React.Component {
     render() {

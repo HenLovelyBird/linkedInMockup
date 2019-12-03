@@ -4,6 +4,7 @@ import AboutUs from './ProfileComponents/AboutUs';
 import ProfileModal from './ProfileModal';
 import {Container} from 'reactstrap';
 import BottomProfile from './ProfileComponents/BottomProfile';
+import Experience from './Experience';
 
 
 class Profile extends React.Component {
@@ -38,7 +39,8 @@ class Profile extends React.Component {
                 
            </Container>
 
-           <AboutUs />
+           {this.state.profile.bio ? 
+           <><AboutUs profileBio={this.state.profile.bio}/></> : <><div>Bio empty!</div></>}        
 
            <Experience />
            
