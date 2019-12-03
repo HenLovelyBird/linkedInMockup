@@ -87,6 +87,7 @@ code {
   top: -90px;
 }
 .modal-img{
+  border-radius: 50%;
   position: relative;
   top: -100px;
   left: 40px;
@@ -121,5 +122,38 @@ code {
 
 #profilepic {
   border-radius: 50%;
-  border-style: solid white; 
+  border: solid rgb(164, 162, 162); 
+  position: absolute;
+  top: 8%;
+  left: 10%;
+
+}
+
+#bgphoto {
+  margin: -11%;
+}
+
+.dropdownbtns {
+  margin-top: 78%;
+  margin-left: 340%;
+  border-radius: 0%;
+}
+
+#morebtn {
+  position: relative;
+  margin-top: -6%;
+  margin-left: 71%;
+  border-radius: 0%;
+}
+
+#editbtn {
+  margin-top: -19%;
+  margin-left: 79%;
+  border-radius: 0%;
+}
+
+#profname {
+  margin-top: 2%;
+  margin-left: -3%;
+  position: absolute;
 }

@@ -41,7 +41,7 @@ class UpdateForm extends React.Component {
           <div className="flex md-4 mr-5">
               <img className="modal-bg" src="https://miro.medium.com/max/1124/1*92adf06PCF91kCYu1nPLQg.jpeg" alt="linkedIn background"></img>
           </div>
-          <img src={this.props.profileInfo.image} className="modal-img" alt="profile pic" id="profilepic"/>
+          <img src={this.props.profileInfo.image} className="modal-img" alt="profile pic"/>
           <Form className="update-form" onSubmit={this.handleSubmit}>
           <Row>
               <Col md="6">
