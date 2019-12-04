@@ -11,11 +11,9 @@ class UsersList extends React.Component{
 
             <Link to={"/currentUserPage" + this.props.user.username} onClick={this.props.toogleDropdown} style={{ textDecoration: 'none'}}>
 
-            <Link to={"/currentUserPage" + this.props.user.username} onClick={this.props.closeDropdown} style={{ textDecoration: 'none'}}>
-
                 <Media left className="user-image-box-search">
                     {this.props.user.image ? <Media className="user-image-search" src={this.props.user.image} alt="Generic placeholder image" /> : <Media className="user-image-search" src="https://cdn3.iconfinder.com/data/icons/flat-pro-user-management-set-4/32/user-unknown-woman-512.png" />}
-                </Media>
+                </Media> 
                 <Media className="px-2 user-text-search" body>
                     <span className="name-surname-user-search">{this.props.user.name} {this.props.user.surname}</span> : {this.props.user.title}
                 </Media>

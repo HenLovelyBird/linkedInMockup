@@ -1,10 +1,10 @@
 import React from "react";
 import ProfileHeader from "./ProfileComponents/ProfileHeader";
 import AboutUs from "./ProfileComponents/AboutUs";
-import ProfileModal from "./ProfileModal";
+// import ProfileModal from "./ProfileModal";
 import { Container } from "reactstrap";
 import BottomProfile from "./ProfileComponents/BottomProfile";
-import Experience from "./Experience";
+// import Experience from "./Experience";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faPencilAlt } from "@fortawesome/free-solid-svg-icons";
 
@@ -79,8 +79,7 @@ class Profile extends React.Component {
     let password = "c9WEUxMS294hN6fF";
     let token = btoa(username + ":" + password);
     let response = await fetch(
-      "https://strive-school-testing-apis.herokuapp.com/api/profile/me",
-      {
+      "https://strive-school-testing-apis.herokuapp.com/api/profile/me",{
         method: "GET",
         headers: {
           Authorization: "Basic " + token
