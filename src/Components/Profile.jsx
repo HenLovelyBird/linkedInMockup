@@ -39,7 +39,7 @@ class Profile extends React.Component {
            </div>
            <FontAwesomeIcon
             onClick={this.setModal}
-            className="fapencilbio"
+            className="fapenciltoeditform"
             icon={faPencilAlt}
           />
            <BottomProfile />   

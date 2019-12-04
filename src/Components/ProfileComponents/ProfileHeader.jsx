@@ -11,18 +11,18 @@ class Profile extends React.Component {
     return (
       <>
         <Row>
-          <div className="col my-5" flex>
+          <div className="col my-5" fluid>
             <img
               src={this.props.profile.image}
               alt="profile pic"
               id="profilepic"
             />
           </div>
-          <FontAwesomeIcon
+          {/* <FontAwesomeIcon
             onClick={this.setModal}
             className="fapencil"
             icon={faPencilAlt}
-          />
+          /> */}
           <div className="col">
             <ProfileNav />
           </div>

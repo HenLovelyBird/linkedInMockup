@@ -8,7 +8,7 @@ class BottomProfile extends React.Component {
             <Container fluid className="dottedboxes">
                 <Row>
 
-                <div className="col-6 my-2">
+                <div className="col-6 my-5">
                     <wrap>
                     <h5>Show recruiters you're open</h5><p>to job opportunities-you control who sees this</p>
                     </wrap>

@@ -7,10 +7,9 @@ class ProfileNav extends React.Component {
     }
   render() {
     return (<>
-    <Container flex className="col-2 justify-content-end">
+    <Container fluid className="btngroup">
       <Row>
-      <div>
-        <ButtonDropdown isOpen={this.state.dropdownOpen} >
+        <div className="col"><ButtonDropdown isOpen={this.state.dropdownOpen} >
           <DropdownToggle onClick={() => this.setState({ dropdownOpen: !this.state.dropdownOpen})} 
           caret className="dropdownbtns">Add Profile Section</DropdownToggle>
           <DropdownMenu>
@@ -23,12 +22,10 @@ class ProfileNav extends React.Component {
             <DropdownItem>Additional information</DropdownItem>
             <DropdownItem>Supported languages</DropdownItem>
           </DropdownMenu>
-        </ButtonDropdown>
-      </div>
-      </Row>
-      <Row className="justify-content-end col-1">
-       <div><Button primary id="morebtn">More...</Button></div>
-       </Row>
+        </ButtonDropdown></div>
+        
+        <div className="col"><Button primary id="morebtn">More...</Button></div>
+        </Row>
        </Container>
     </>);
   }
