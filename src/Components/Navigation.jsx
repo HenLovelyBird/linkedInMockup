@@ -14,8 +14,8 @@ class Navigation extends React.Component {
       setDropdownOpen: false,
       srch: ''
    }
-   toggleDropdown = (ev) => {
-      console.log(ev.target.value)
+
+   toggleDropdown = () => {
       if(this.state.setDropdownOpen === false){
          this.setState({
             setDropdownOpen: true,
@@ -28,21 +28,35 @@ class Navigation extends React.Component {
          })
       }
    }
-   handleSearch = (ev) => {
+
+   handleSearch = async(ev) => {
+     let username = "user16"
+     let password = "c9WEUxMS294hN6fF"
+     let token = btoa(username + ":" + password)
+     console.log(ev.target.value)
+     if(ev.target.value.length > 4){
+      let response = await fetch("https://striveschool.herokuapp.com/api/profile/" + ev.target.value, {
+         method: "GET",
+         headers: {
+             "authorization" : "Basic " + token
+         }
+      })
+      let usersData = await response.json()
       this.setState({
-         srch: ev.target.value
-      }) 
-      if(ev.target.value.length === 0) {
-         this.setState({
-            setDropdownOpen: false,
-            dropdownOpen: false,
-         })
-      } else if(ev.target.value.length > 0){
-         this.setState({
-            setDropdownOpen: true,
-            dropdownOpen: true,
-         })
-      }
+            srch: usersData
+      })
+     }
+      // if(ev.target.value.length === 0) {
+      //    this.setState({
+      //       setDropdownOpen: false,
+      //       dropdownOpen: false,
+      //    })
+      // } else if(ev.target.value.length > 0){
+      //    this.setState({
+      //       setDropdownOpen: true,
+      //       dropdownOpen: true,
+      //    })
+      // }
    }
     render() {
       return (
