@@ -1,9 +1,8 @@
 import React from "react";
-import BgPhoto from "./BgPhoto";
 import "../../index.css";
 import ProfileNav from "./ProfileNav";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPencilAlt } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faPencilAlt } from "@fortawesome/free-solid-svg-icons";
 import { Row } from "reactstrap";
 
 class Profile extends React.Component {
@@ -24,7 +23,7 @@ class Profile extends React.Component {
             icon={faPencilAlt}
           /> */}
           <div className="col">
-            <ProfileNav />
+            <ProfileNav profileInfo={this.props.profile}/>
           </div>
           <div className="col">
             <h2 id="profname">
