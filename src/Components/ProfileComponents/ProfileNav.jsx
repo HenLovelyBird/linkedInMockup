@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { Container, Row, Button, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 class ProfileNav extends React.Component {
     state= {
@@ -7,7 +7,9 @@ class ProfileNav extends React.Component {
     }
   render() {
     return (<>
-      <div className="">
+    <Container flex className="col-2 justify-content-end">
+      <Row>
+      <div>
         <ButtonDropdown isOpen={this.state.dropdownOpen} >
           <DropdownToggle onClick={() => this.setState({ dropdownOpen: !this.state.dropdownOpen})} 
           caret className="dropdownbtns">Add Profile Section</DropdownToggle>
@@ -23,7 +25,11 @@ class ProfileNav extends React.Component {
           </DropdownMenu>
         </ButtonDropdown>
       </div>
-       <div><Button id="morebtn">More...</Button></div>
+      </Row>
+      <Row className="justify-content-end col-1">
+       <div><Button primary id="morebtn">More...</Button></div>
+       </Row>
+       </Container>
     </>);
   }
 }

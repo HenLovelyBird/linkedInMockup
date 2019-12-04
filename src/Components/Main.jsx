@@ -4,6 +4,7 @@ import {Container} from 'reactstrap';
 import Navigation from './Navigation';
 import Profile from './Profile';
 import CurrentUserPage from './CurrentUserPage';
+import Newsfeed from './Newsfeed';
 
 
 class Main extends React.Component {
@@ -15,6 +16,7 @@ class Main extends React.Component {
             <Container className="parentcontainer">
                 <Route path="/Profile" component={Profile} />
                 <Route path="/currentUserPage:userId" component={CurrentUserPage} />
+                <Route path="/Newsfeed" component={Newsfeed}/>
             </Container>   
         </Router>
         );

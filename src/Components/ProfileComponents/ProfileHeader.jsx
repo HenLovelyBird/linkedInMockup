@@ -11,10 +11,6 @@ class Profile extends React.Component {
     return (
       <>
         <Row>
-          {/* <div className="col">
-            {/* <BgPhoto /> */}
-          
-
           <div className="col my-5" flex>
             <img
               src={this.props.profile.image}
