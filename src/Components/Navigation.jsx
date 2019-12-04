@@ -46,17 +46,6 @@ class Navigation extends React.Component {
             srch: usersData
       })
      }
-      // if(ev.target.value.length === 0) {
-      //    this.setState({
-      //       setDropdownOpen: false,
-      //       dropdownOpen: false,
-      //    })
-      // } else if(ev.target.value.length > 0){
-      //    this.setState({
-      //       setDropdownOpen: true,
-      //       dropdownOpen: true,
-      //    })
-      // }
    }
     render() {
       return (
