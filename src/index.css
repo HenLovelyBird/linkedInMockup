@@ -167,8 +167,9 @@ code {
 }
 
 #profname {
-  margin-top: 115%;
+  margin-top: 120%;
   position: absolute;
+  margin-left: -195%;
 }
 
 #bgphoto {
@@ -176,7 +177,8 @@ code {
 }
 
 .btngroup {
-
+  margin-top: 75%;
+  margin-left: 90%;
 }
 
 .dropdownbtns {
@@ -236,6 +238,7 @@ code {
 .dottedboxes {
   border: dotted rgb(164, 162, 162);
   margin-bottom: 2%;
+  margin-top: 2%;
 }
 
 .aboutuscontainer {

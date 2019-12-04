@@ -29,7 +29,7 @@ class Profile extends React.Component {
 
     render() {
         return (<>
-        <Container flex id="profilecontainer">
+        <Container fluid id="profilecontainer">
             <div>
                 {this.state.profile && 
                <div><ProfileHeader profile={this.state.profile} /></div>}
