@@ -4,7 +4,7 @@ import AboutUs from "./ProfileComponents/AboutUs";
 // import ProfileModal from "./ProfileModal";
 import { Container } from "reactstrap";
 import BottomProfile from "./ProfileComponents/BottomProfile";
-// import Experience from "./Experience";
+import Experience from "./Experience";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faPencilAlt } from "@fortawesome/free-solid-svg-icons";
 
@@ -69,7 +69,7 @@ class Profile extends React.Component {
         )}
 
         <Container flex className="experiencecontainer">
-          {/* <Experience /> */}
+          <Experience />
         </Container>
       
         </>);

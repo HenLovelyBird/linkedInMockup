@@ -3,7 +3,7 @@ import {Container} from 'reactstrap';
 
 class Experience extends React.Component {
     state = {
-        experiences: {}
+        experiences: ""
     }
 
     render() {
@@ -14,9 +14,9 @@ class Experience extends React.Component {
                 <div className="col">
                     <h6>Jobtitle One</h6>
 
-                    {this.props.user.experiences ?<>
+                    {this.state.experiences ?<>
                     <div className="userexperience">
-                        {this.props.user.experiences}
+                        {this.state.experiences.text}
                     </div></> :
                     <><div>No User Experience Listed!</div></>}
 
@@ -25,13 +25,13 @@ class Experience extends React.Component {
         </>);
     }
 
-    componentDidMount = () => {
+    componentDidMount = async () => {
         let username = "user16";
         let password = "c9WEUxMS294hN6fF";
         let token = btoa(username + ":" + password)
-        response = await fetch("https://striveschool.herokuapp.com/api/profile/user16/experiences", {
+        let response = await fetch("https://striveschool.herokuapp.com/api/profile/user16/experiences", {
             method: "GET",
-            headers {
+            headers: {
                 Authorization: "Basic " + token
             }
         });
