@@ -162,39 +162,41 @@ code {
 #profilepic {
   border-radius: 50%;
   border: solid rgb(164, 162, 162); 
-  position: absolute;
-  top: 8%;
-  left: 8%;
+  width: 50%;
+  margin-top: 60%;
+}
 
+#profname {
+  margin-top: 120%;
+  position: absolute;
+  margin-left: -195%;
 }
 
 #bgphoto {
   margin: -11%;
 }
 
+.btngroup {
+  margin-top: 75%;
+  margin-left: 90%;
+}
+
 .dropdownbtns {
-  margin-top: -25%;
-  margin-left: 340%;
   border-radius: 0%;
+  margin-top: 130%;
+  
 }
 
 #morebtn {
   position: relative;
-  margin-top: -8%;
-  margin-left: 72%;
   border-radius: 0%;
+  margin-top: 220%
 }
 
 #editbtn {
   margin-top: -19%;
   margin-left: 79%;
   border-radius: 0%;
-}
-
-#profname {
-  margin-top: -3%;
-  margin-left: -4%;
-  position: absolute;
 }
 
 /*modalFaina*/
@@ -209,29 +211,42 @@ code {
   border-radius: 0px;
 }
 
-.fapencil{
+/* .fapencil{
   margin-left: 81%;
   margin-top: 14%;
+  display: none;
+} */
+
+.fapencilbio {
+  margin-left: 93%;
 }
+
+/* .fapenciltoeditform{
+  margin-left: 93%;
+} */
+
+.fapencilprofilenavtoeditform{
+  margin-left: 100%
+}
+
 
 #profilecontainer{
   padding-right: 6px;
   padding-left: -42px;
-  /* border: solid, rgb(164, 162, 162); this is not showing up */
+  background-image: url(https://miro.medium.com/max/1124/1*92adf06PCF91kCYu1nPLQg.jpeg);
+  background-size: 100%;
+  background-position: stretch;
+  background-repeat: no-repeat;
+  border: solid rgb(164, 162, 162);
 }
 
 .dottedboxes {
   border: dotted rgb(164, 162, 162);
-  margin-left: -9%;
-}
-
-.fapencilbio {
-  margin-left: 93%;
-
+  margin-bottom: 2%;
+  margin-top: 2%;
 }
 
 .aboutuscontainer {
-  margin-left: -8%;
   margin-top: 4%;
   border: solid rgb(164, 162, 162);
 }
@@ -239,5 +254,5 @@ code {
 .experiencecontainer {
   border: solid rgb(164, 162, 162);
   margin-top: 4%;
-  margin-left: -8%;
 }
+

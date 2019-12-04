@@ -52,7 +52,9 @@ class CurrentUserPage extends React.Component {
     componentDidUpdate = (prevProps, prevState) => {
         if (prevProps.match.params.userId !== this.props.match.params.userId){
             this.fetchingCurrentUser()
+
             this.fetchingExpirience()
+
         }
     }
 
@@ -71,6 +73,7 @@ class CurrentUserPage extends React.Component {
             }
         })
         let prof = await response.json()
+
         setTimeout(() => {
             this.setState({
                 expirience: prof,
@@ -114,6 +117,7 @@ class CurrentUserPage extends React.Component {
             }
         })
         let prof = await response.json()
+        console.log(prof);
         setTimeout(() => {
             this.setState({
                 profile: prof,

@@ -16,8 +16,13 @@ class ProfilesDropDown extends React.Component {
     render() {
         return ( 
             <>
+
             {this.state.loading ? <><Loader color="#007ACC" height={40} width={40} type="TailSpin" style={loaderStyle} /> </> : this.props.searchQuery ? <SearchedUsers toogleDropdown={this.props.toggleProfileDropdown} onClick={this.props.toggleProfileDropdown} userSearch={this.props.searchQuery}/> : this.state.users ? this.state.users
                 .map((u, i) => (<UsersList user={u} key={i} onClick={this.props.toggleProfileDropdown} toogleDropdown={this.props.toggleProfileDropdown} />)) : <h4>No users. Try again later</h4>}
+
+            {this.state.loading ? <><Loader color="#007ACC" height={40} width={40} type="TailSpin" style={loaderStyle} /> </> : this.state.users ? this.state.users
+                .map((u, i) => (<UsersList user={u} key={i} onClick={this.props.toggleProfileDropdown} closeDropdown={this.props.toggleProfileDropdown} />)) : <h4>No users. Try again later</h4>}
+
             </>
          );
     }
