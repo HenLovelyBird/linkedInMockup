@@ -193,13 +193,14 @@ code {
 .dropdownbtns {
   border-radius: 0%;
   margin-top: 130%;
-  
+  background-color: rgb(44, 121, 145);
 }
 
 #morebtn {
   position: relative;
   border-radius: 0%;
-  margin-top: 220%
+  margin-top: 201%;
+  background-color: rgb(44, 121, 145);
 }
 
 #editbtn {
@@ -230,13 +231,13 @@ code {
   margin-left: 93%;
 }
 
-/* .fapenciltoeditform{
-  margin-left: 93%;
-} */
-
-.fapencilprofilenavtoeditform{
-  margin-left: 100%
+.fapenciltoeditform{
+  margin-left: 94%;
 }
+
+/* .fapencilprofilenavtoeditform{
+  margin-left: 100%
+} */
 
 
 #profilecontainer{
@@ -263,5 +264,20 @@ code {
 .experiencecontainer {
   border: solid rgb(164, 162, 162);
   margin-top: 4%;
+  overflow-y: scroll;
+}
+
+.explist{
+  list-style: none;
+}
+
+.editexperience {
+  position: absolute;
+  margin-left: 53%;
+}
+
+#deleteexperience {
+  margin-left: 2%!important;
+  background-color: rgb(44, 121, 145);
 }
 
