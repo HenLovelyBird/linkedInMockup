@@ -1,20 +1,22 @@
-import React, { useState } from 'react';
+  import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 class  NewsModel extends React.Component {
     state = {
       modalOpen: true,
+      setModel: false,
       text: ''
   }
 
-    setModal = () => {
+        setModal = () => {
       if(this.state.modalOpen === true){
-          this.setState({
+        this.setState({
               modalOpen: false
           })
       } else if (this.state.modalOpen === false){
           this.setState({
-              modalOpen: true
+          modalOpen: true
+
           })
       }
   }
@@ -38,10 +40,10 @@ class  NewsModel extends React.Component {
         }
       )
       console.log(response)
+      
       return response
     }
   }
-
   render(){
     return (
       <>
@@ -53,9 +55,8 @@ class  NewsModel extends React.Component {
           <input type="text" name="text" onChange={(data) => { this.setState({ text: data.target.value }) }} />
           </ModalBody>
           <ModalFooter>
-          <button> Submit Data </button>
-            <Button onClick={this.setModal} color="primary">Post</Button>
-            <Button onClick={this.post}></Button>
+            <Button onClick={this.setModal} color="primary">Close</Button>
+            <Button  onClick={this.post} color="primary">Post</Button>
           </ModalFooter>
         </Modal></>}
         </>
@@ -64,3 +65,4 @@ class  NewsModel extends React.Component {
 }
 
 export default NewsModel;
+

@@ -255,4 +255,7 @@ code {
   border: solid rgb(164, 162, 162);
   margin-top: 4%;
 }
-
+toast{
+  width: "400%" !important;
+  height: "400%" !important;
+}
