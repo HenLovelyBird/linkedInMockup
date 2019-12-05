@@ -171,14 +171,16 @@ code {
 #profilepic {
   border-radius: 50%;
   border: solid rgb(164, 162, 162); 
-  width: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
   margin-top: 60%;
 }
 
 #profname {
-  margin-top: 120%;
+  margin-top: 124%;
   position: absolute;
-  margin-left: -195%;
+  margin-left: -189%;
 }
 
 #bgphoto {

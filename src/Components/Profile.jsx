@@ -99,8 +99,6 @@ class Profile extends React.Component {
         });
     }
 
-  
-        }
   componentDidMount = async () => {
     let username = "user16";
     let password = "c9WEUxMS294hN6fF";
@@ -118,8 +116,8 @@ class Profile extends React.Component {
     this.setState({
       profile: prof
     });
-  };
   }
+}
 
 
 

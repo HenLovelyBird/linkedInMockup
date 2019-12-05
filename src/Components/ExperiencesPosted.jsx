@@ -17,7 +17,7 @@ class ExperiencesPosted extends React.Component {
           return response
     }
     render() {
-        console.log(this.props)
+    
         return (
         <div className="userexperiences mt-5">
         <ul className="explist">
