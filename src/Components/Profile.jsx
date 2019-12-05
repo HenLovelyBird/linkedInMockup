@@ -1,12 +1,12 @@
 import React from "react";
 import ProfileHeader from "./ProfileComponents/ProfileHeader";
 import AboutUs from "./ProfileComponents/AboutUs";
-// import ProfileModal from "./ProfileModal";
+import ProfileModal from "./ProfileModal";
 import { Container } from "reactstrap";
 import BottomProfile from "./ProfileComponents/BottomProfile";
 import Experience from "./Experience";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faPencilAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPencilAlt } from "@fortawesome/free-solid-svg-icons";
 
 class Profile extends React.Component {
   state = {
@@ -14,17 +14,17 @@ class Profile extends React.Component {
     modalOpen: false,
     dropdownOpen: false
   };
-//   setModal = () => {
-//     if (this.state.modalOpen === true) {
-//       this.setState({
-//         modalOpen: false
-//       });
-//     } else if (this.state.modalOpen === false) {
-//       this.setState({
-//         modalOpen: true
-//       });
-//     }
-//   };
+  setModal = () => {
+    if (this.state.modalOpen === true) {
+      this.setState({
+        modalOpen: false
+      });
+    } else if (this.state.modalOpen === false) {
+      this.setState({
+        modalOpen: true
+      });
+    }
+  };
 
   render() {
     return (<>
@@ -36,7 +36,7 @@ class Profile extends React.Component {
               </div>
             )}
 
-            {/* <div>
+            <div>
               {this.state.modalOpen && (
                 <ProfileModal
                   setmodal={this.setModal}
@@ -44,18 +44,19 @@ class Profile extends React.Component {
                   open={this.state.modalOpen}
                 />
               )}
-            </div> */}
+            </div> 
 
-            {/* <FontAwesomeIcon
+            <FontAwesomeIcon
               onClick={this.setModal}
               className="fapenciltoeditform"
               icon={faPencilAlt}
-            /> */}
+            />
 
           <BottomProfile />
           </div>
         </Container>
 
+{/* Bio Section */}
         {this.state.profile.bio ? (
           <>
             <Container flex className="aboutuscontainer">
@@ -69,11 +70,14 @@ class Profile extends React.Component {
         )}
 
         <Container flex className="experiencecontainer">
+
+{/* Experience Section */}
           <Experience />
         </Container>
       
         </>);
-  }
+  
+        }
   componentDidMount = async () => {
     let username = "user16";
     let password = "c9WEUxMS294hN6fF";
@@ -92,6 +96,7 @@ class Profile extends React.Component {
       profile: prof
     });
   };
-}
+  }
+
 
 export default Profile;
