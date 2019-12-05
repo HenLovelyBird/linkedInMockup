@@ -7,6 +7,7 @@ class Experience extends React.Component {
     }
 
     render() {
+        console.log(this.state.experiences);
         return (<>
             <Container fluid>
                 <h3>Experience</h3> 
@@ -14,11 +15,11 @@ class Experience extends React.Component {
                 <div className="col">
                     <h6>Jobtitle One</h6>
 
-                    {this.state.experiences ?<>
-                    <div className="userexperience">
-                        {this.state.experiences.text}
-                    </div></> :
-                    <><div>No User Experience Listed!</div></>}
+                    {this.state.experiences && this.state.experiences.map((experience, index)=>(
+                         <div key={index} className="userexperience">
+                         {experience.company}
+                     </div>
+                    ))}
 
                  </div>
                 </Container>
@@ -32,7 +33,7 @@ class Experience extends React.Component {
         let response = await fetch("https://striveschool.herokuapp.com/api/profile/user16/experiences", {
             method: "GET",
             headers: {
-                Authorization: "Basic " + token
+                Authorization: "Basic " + token,
             }
         });
         let exp = await response.json()
