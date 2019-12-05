@@ -41,7 +41,6 @@ class  NewsModel extends React.Component {
       return response
     }
   }
-
   render(){
     return (
       <>
