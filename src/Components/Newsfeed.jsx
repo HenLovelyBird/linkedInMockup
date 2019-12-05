@@ -11,6 +11,7 @@ class Newsfeed extends React.Component {
         modalOpen: false,
         dropdownOpen: false
     }
+    
     setModal = () => {
         if(this.state.modalOpen === true){
             this.setState({

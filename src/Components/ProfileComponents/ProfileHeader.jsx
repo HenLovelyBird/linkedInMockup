@@ -4,19 +4,25 @@ import ProfileNav from "./ProfileNav";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faPencilAlt } from "@fortawesome/free-solid-svg-icons";
 import { Row } from "reactstrap";
+import ModalPicture from './ModalPicture'
 
 class Profile extends React.Component {
+  state = { 
+    modalOpen: false
+  }
   render() {
     return (
       <>
         <Row>
           <div className="col my-5" fluid>
-            <img
+            <img 
+              onClick={() => {this.setState({modalOpen: !this.state.modalOpen})}}
               src={this.props.profile.image}
               alt="profile pic"
               id="profilepic"
             />
           </div>
+          {this.state.modalOpen && <ModalPicture profile={this.props.profile} modalOpen={this.state.modalOpen}/>}
           {/* <FontAwesomeIcon
             onClick={this.setModal}
             className="fapencil"
