@@ -4,7 +4,19 @@ import { FaPencilAlt, FaBars } from "react-icons/fa";
 import NewsModel from './NewsModel';
 
 class NewsFeedBox extends Component {
-
+    delete = async()=>{
+        let username = "user16";
+        let password = "c9WEUxMS294hN6fF";
+        let token = btoa(username + ":" + password);
+        let response = await fetch("https://striveschool.herokuapp.com/api/posts/" + this.props.newsData._id,{
+              method: "DELETE",
+              headers: {
+                  "authorization" : "Basic " + token,
+              }
+          }) 
+          console.log(response)
+          return response
+    }
     render() {
         console.log(this.props)
         return (
@@ -17,6 +29,7 @@ class NewsFeedBox extends Component {
                         <div>{this.props.newsData.username}</div>
                     </ToastHeader>
                     <ToastBody>{this.props.newsData.text}</ToastBody>
+                    <button onClick={this.delete}>Delete</button>
                 </Toast>
             </div>
 

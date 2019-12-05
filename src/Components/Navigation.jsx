@@ -2,6 +2,7 @@ import React from 'react';
 import {Nav, NavItem,InputGroupAddon, Input, NavLink,InputGroupText, Navbar, NavbarBrand, InputGroup, Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import {Link} from 'react-router-dom'
 import { faBriefcase, faSearch, faHome, faUsers, faComments, faBell, faTh } from '@fortawesome/free-solid-svg-icons'
 import '../index.css'
 import ProfilesDropDown from './ProfilesDropDown';
@@ -97,8 +98,10 @@ class Navigation extends React.Component {
                </NavItem>
                <NavItem>
                   <div className="nav-item-div">
+                     <Link to="/Newsfeed" style={{ textDecoration: 'none'}}>  
                      <FontAwesomeIcon className="nav-icon" icon={faComments}/>
                      <NavLink href="#">Messaging</NavLink>
+                     </Link>
                   </div>
                </NavItem>
                <NavItem>
@@ -109,8 +112,10 @@ class Navigation extends React.Component {
                </NavItem>
                <NavItem>
                   <div className="nav-item-div">
+                     <Link to="/Profile" style={{ textDecoration: 'none'}} >
                      <div className="profile-image-div"></div>
                      <NavLink href="#">Me</NavLink>
+                     </Link>
                   </div>
                </NavItem>
                <div className="vl"></div>
