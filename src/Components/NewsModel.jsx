@@ -17,11 +17,11 @@ const toggle = () => setModal(!modal);
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle} color="blue">Enter Text</ModalHeader>
         <ModalBody>
-        Your Text
-        {/*<input type="text" value={this.state.name} name="text" onChange={(data) => { this.setState({ text: data.target.value }) }} />*/}
+        
+        <input type="text" value={this.state.name} name="text" onChange={() => { this.setState({ text: data.target.value }) }} />
         </ModalBody>
         <ModalFooter>
-        {/*<button onClick={() => { this.submit() }} > Submit Data </button>*/}
+       <button onClick={() => { this.submit() }} > Submit Data </button>
           <Button color="primary" onClick={toggle}>Post</Button>
         </ModalFooter>
       </Modal>
