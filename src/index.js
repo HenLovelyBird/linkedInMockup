@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import 'react-image-crop/dist/ReactCrop.css';
 import './index.css';
 import Main from './Components/Main';
 import * as serviceWorker from './serviceWorker';

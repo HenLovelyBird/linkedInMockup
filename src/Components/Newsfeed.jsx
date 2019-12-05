@@ -26,6 +26,7 @@ class Newsfeed extends React.Component {
         modalOpenPicture: false,
         dropdownOpen: false
     }
+
     setModal = (event) => {
         event.preventDefault();
 
