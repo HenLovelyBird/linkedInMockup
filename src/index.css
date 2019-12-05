@@ -9,6 +9,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(240, 240, 240);
 }
+.modal-content {
+  width:800px;
+}
+.modal-dialog{
+  max-width: 800px;
+}
 .edit-profile-text {
   font-size: 20px;
   padding: 10px 0px 10px 10px;
@@ -28,6 +34,9 @@ body {
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
+}
+.ReactCrop__image{
+  width: 500px;
 }
 .user-text-search{
   color:black;

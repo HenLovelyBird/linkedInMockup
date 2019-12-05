@@ -76,6 +76,29 @@ class Profile extends React.Component {
         </Container>
       
         </>);
+
+  }
+    componentDidUpdate = async(prevProps, prevState) => {
+        this.fetchingNewPic()
+    }
+    fetchingNewPic = async() => {
+        let username = "user16";
+        let password = "c9WEUxMS294hN6fF";
+        let token = btoa(username + ":" + password);
+        let response = await fetch(
+          "https://strive-school-testing-apis.herokuapp.com/api/profile/me",{
+            method: "GET",
+            headers: {
+              Authorization: "Basic " + token
+            }
+          }
+        );
+        let prof = await response.json();
+        this.setState({
+          profile: prof
+        });
+    }
+
   
         }
   componentDidMount = async () => {
@@ -97,6 +120,7 @@ class Profile extends React.Component {
     });
   };
   }
+
 
 
 export default Profile;
