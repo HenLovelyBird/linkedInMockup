@@ -1,9 +1,8 @@
 import React from "react";
-import BgPhoto from "./BgPhoto";
 import "../../index.css";
 import ProfileNav from "./ProfileNav";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPencilAlt } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faPencilAlt } from "@fortawesome/free-solid-svg-icons";
 import { Row } from "reactstrap";
 
 class Profile extends React.Component {
@@ -11,20 +10,20 @@ class Profile extends React.Component {
     return (
       <>
         <Row>
-          <div className="col my-5" flex>
+          <div className="col my-5" fluid>
             <img
               src={this.props.profile.image}
               alt="profile pic"
               id="profilepic"
             />
           </div>
-          <FontAwesomeIcon
+          {/* <FontAwesomeIcon
             onClick={this.setModal}
             className="fapencil"
             icon={faPencilAlt}
-          />
+          /> */}
           <div className="col">
-            <ProfileNav />
+            <ProfileNav profileInfo={this.props.profile}/>
           </div>
           <div className="col">
             <h2 id="profname">

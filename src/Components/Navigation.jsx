@@ -2,6 +2,7 @@ import React from 'react';
 import {Nav, NavItem,InputGroupAddon, Input, NavLink,InputGroupText, Navbar, NavbarBrand, InputGroup, Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import {Link} from 'react-router-dom'
 import { faBriefcase, faSearch, faHome, faUsers, faComments, faBell, faTh } from '@fortawesome/free-solid-svg-icons'
 import '../index.css'
 import ProfilesDropDown from './ProfilesDropDown';
@@ -14,8 +15,8 @@ class Navigation extends React.Component {
       setDropdownOpen: false,
       srch: ''
    }
-   toggleDropdown = (ev) => {
-      console.log(ev.target.value)
+
+   toggleDropdown = () => {
       if(this.state.setDropdownOpen === false){
          this.setState({
             setDropdownOpen: true,
@@ -28,21 +29,24 @@ class Navigation extends React.Component {
          })
       }
    }
-   handleSearch = (ev) => {
+
+   handleSearch = async(ev) => {
+     let username = "user16"
+     let password = "c9WEUxMS294hN6fF"
+     let token = btoa(username + ":" + password)
+     console.log(ev.target.value)
+     if(ev.target.value.length > 4){
+      let response = await fetch("https://striveschool.herokuapp.com/api/profile/" + ev.target.value, {
+         method: "GET",
+         headers: {
+             "authorization" : "Basic " + token
+         }
+      })
+      let usersData = await response.json()
       this.setState({
-         srch: ev.target.value
-      }) 
-      if(ev.target.value.length === 0) {
-         this.setState({
-            setDropdownOpen: false,
-            dropdownOpen: false,
-         })
-      } else if(ev.target.value.length > 0){
-         this.setState({
-            setDropdownOpen: true,
-            dropdownOpen: true,
-         })
-      }
+            srch: usersData
+      })
+     }
    }
     render() {
       return (
@@ -94,8 +98,10 @@ class Navigation extends React.Component {
                </NavItem>
                <NavItem>
                   <div className="nav-item-div">
+                     <Link to="/Newsfeed" style={{ textDecoration: 'none'}}>  
                      <FontAwesomeIcon className="nav-icon" icon={faComments}/>
                      <NavLink href="#">Messaging</NavLink>
+                     </Link>
                   </div>
                </NavItem>
                <NavItem>
@@ -106,8 +112,10 @@ class Navigation extends React.Component {
                </NavItem>
                <NavItem>
                   <div className="nav-item-div">
+                     <Link to="/Profile" style={{ textDecoration: 'none'}} >
                      <div className="profile-image-div"></div>
                      <NavLink href="#">Me</NavLink>
+                     </Link>
                   </div>
                </NavItem>
                <div className="vl"></div>
