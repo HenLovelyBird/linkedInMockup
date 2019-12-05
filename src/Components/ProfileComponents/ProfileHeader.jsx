@@ -1,8 +1,6 @@
 import React from "react";
 import "../../index.css";
 import ProfileNav from "./ProfileNav";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faPencilAlt } from "@fortawesome/free-solid-svg-icons";
 import { Row } from "reactstrap";
 
 class Profile extends React.Component {
@@ -17,11 +15,7 @@ class Profile extends React.Component {
               id="profilepic"
             />
           </div>
-          {/* <FontAwesomeIcon
-            onClick={this.setModal}
-            className="fapencil"
-            icon={faPencilAlt}
-          /> */}
+        
           <div className="col">
             <ProfileNav profileInfo={this.props.profile}/>
           </div>
