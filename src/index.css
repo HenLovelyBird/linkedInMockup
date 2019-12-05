@@ -9,6 +9,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(240, 240, 240);
 }
+.modal-content {
+  width:800px;
+}
+.modal-dialog{
+  max-width: 800px;
+}
 .edit-profile-text {
   font-size: 20px;
   padding: 10px 0px 10px 10px;
@@ -28,6 +34,9 @@ body {
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
+}
+.ReactCrop__image{
+  width: 500px;
 }
 .user-text-search{
   color:black;
@@ -162,14 +171,16 @@ code {
 #profilepic {
   border-radius: 50%;
   border: solid rgb(164, 162, 162); 
-  width: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
   margin-top: 60%;
 }
 
 #profname {
-  margin-top: 120%;
+  margin-top: 124%;
   position: absolute;
-  margin-left: -195%;
+  margin-left: -189%;
 }
 
 #bgphoto {
@@ -184,13 +195,14 @@ code {
 .dropdownbtns {
   border-radius: 0%;
   margin-top: 130%;
-  
+  background-color: rgb(44, 121, 145);
 }
 
 #morebtn {
   position: relative;
   border-radius: 0%;
-  margin-top: 220%
+  margin-top: 201%;
+  background-color: rgb(44, 121, 145);
 }
 
 #editbtn {
@@ -221,13 +233,13 @@ code {
   margin-left: 93%;
 }
 
-/* .fapenciltoeditform{
-  margin-left: 93%;
-} */
-
-.fapencilprofilenavtoeditform{
-  margin-left: 100%
+.fapenciltoeditform{
+  margin-left: 94%;
 }
+
+/* .fapencilprofilenavtoeditform{
+  margin-left: 100%
+} */
 
 
 #profilecontainer{
@@ -254,6 +266,21 @@ code {
 .experiencecontainer {
   border: solid rgb(164, 162, 162);
   margin-top: 4%;
+  overflow-y: scroll;
+}
+
+.explist{
+  list-style: none;
+}
+
+.editexperience {
+  position: absolute;
+  margin-left: 53%;
+}
+
+#deleteexperience {
+  margin-left: 2%!important;
+  background-color: rgb(44, 121, 145);
 }
 toast{
   width: "400%" !important;
