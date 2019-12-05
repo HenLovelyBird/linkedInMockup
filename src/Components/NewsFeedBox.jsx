@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
-import { Toast, ToastBody, ToastHeader, Jumbotron, Container } from 'reactstrap';
+import { Toast, ToastBody, ToastHeader, Jumbotron, Container, Col } from 'reactstrap';
 import { FaPencilAlt, FaBars } from "react-icons/fa";
 import NewsModel from './NewsModel';
 
+let Toaststyle ={
+    width : "900px",
+    height : "250px"
+}
+
+
 class NewsFeedBox extends Component {
+    state= { 
+        isDelete: false
+        
+    }
     delete = async()=>{
         let username = "user16";
         let password = "c9WEUxMS294hN6fF";
@@ -15,15 +25,16 @@ class NewsFeedBox extends Component {
               }
           }) 
           console.log(response)
+          this.setState({isDelete: true})
           return response
+         
     }
     render() {
         console.log(this.props)
-        return (
-            <div >
-                <Toast>
-                <div className="mx-5 float-right">
-                             {this.props.newsData.createdAt} <FaBars />
+        return this.state.isDelete === false? ( 
+            <Col md="4">
+                 <Toast style={Toaststyle}>
+                <div className="mx-5 float-right"> <FaBars />
                         </div>
                     <ToastHeader>
                         <div>{this.props.newsData.username}</div>
@@ -31,9 +42,9 @@ class NewsFeedBox extends Component {
                     <ToastBody>{this.props.newsData.text}</ToastBody>
                     <button onClick={this.delete}>Delete</button>
                 </Toast>
-            </div>
+            </Col>
 
-        );
+        ): (" ");
     }
 }
 

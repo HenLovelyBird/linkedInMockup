@@ -282,4 +282,7 @@ code {
   margin-left: 2%!important;
   background-color: rgb(44, 121, 145);
 }
-
+toast{
+  width: "400%" !important;
+  height: "400%" !important;
+}
