@@ -35,6 +35,9 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
 }
+.ReactCrop__image{
+  width: 500px;
+}
 .user-text-search{
   color:black;
   display: inline-block;

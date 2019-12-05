@@ -10,19 +10,25 @@ class Profile extends React.Component {
   state = { 
     modalOpen: false
   }
+  setModal=()=> {
+    this.setState({
+      modalOpen: !this.state.modalOpen
+    })
+    console.log(this.state)
+  }
   render() {
     return (
       <>
         <Row>
           <div className="col my-5" fluid>
             <img 
-              onClick={() => {this.setState({modalOpen: !this.state.modalOpen})}}
+              onClick={this.setModal}
               src={this.props.profile.image}
               alt="profile pic"
               id="profilepic"
             />
           </div>
-          {this.state.modalOpen && <ModalPicture profile={this.props.profile} modalOpen={this.state.modalOpen}/>}
+          {this.state.modalOpen && <ModalPicture profile={this.props.profile} open={this.state.modalOpen} modalOpen={this.setModal}/>}
           {/* <FontAwesomeIcon
             onClick={this.setModal}
             className="fapencil"

@@ -74,24 +74,44 @@ class Profile extends React.Component {
       
         </>);
   }
-  componentDidMount = async () => {
-    let username = "user16";
-    let password = "c9WEUxMS294hN6fF";
-    let token = btoa(username + ":" + password);
-    let response = await fetch(
-      "https://strive-school-testing-apis.herokuapp.com/api/profile/me",{
-        method: "GET",
-        headers: {
-          Authorization: "Basic " + token
+    componentDidUpdate = async(prevProps, prevState) => {
+        this.fetchingNewPic()
+    }
+    fetchingNewPic = async() => {
+        let username = "user16";
+        let password = "c9WEUxMS294hN6fF";
+        let token = btoa(username + ":" + password);
+        let response = await fetch(
+          "https://strive-school-testing-apis.herokuapp.com/api/profile/me",{
+            method: "GET",
+            headers: {
+              Authorization: "Basic " + token
+            }
+          }
+        );
+        let prof = await response.json();
+        this.setState({
+          profile: prof
+        });
+    }
+    componentDidMount = async () => {
+        let username = "user16";
+        let password = "c9WEUxMS294hN6fF";
+        let token = btoa(username + ":" + password);
+        let response = await fetch(
+        "https://strive-school-testing-apis.herokuapp.com/api/profile/me",{
+            method: "GET",
+            headers: {
+            Authorization: "Basic " + token
+            }
         }
-      }
-    );
-    let prof = await response.json();
-    console.log(prof);
-    this.setState({
-      profile: prof
-    });
-  };
-}
+        );
+        let prof = await response.json();
+        console.log(prof);
+        this.setState({
+        profile: prof
+        });
+    };
+    }
 
 export default Profile;
