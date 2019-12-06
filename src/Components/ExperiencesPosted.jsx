@@ -1,24 +1,27 @@
 import React from 'react';
 
 class ExperiencesPosted extends React.Component {
-    state = {    }
+    state = {
+      isDeleted: false,
+
+    }
 
     delete = async()=>{
         let username = "user16";
         let password = "c9WEUxMS294hN6fF";
         let token = btoa(username + ":" + password);
-        let response = await fetch("https://striveschool.herokuapp.com/api/profile/user16/experiences" + this.props.allExp._id,{
+        let response = await fetch("https://striveschool.herokuapp.com/api/profile/user16/experiences/" + this.props.allExp._id,{
               method: "DELETE",
               headers: {
                   "authorization" : "Basic " + token,
               }
           }) 
           console.log(response)
-          return response
-    }
+          this.setState({isDeleted: true});
+          return response }
     render() {
     
-        return (
+        return this.state.isDeleted !=true ? (
         <div className="userexperiences mt-5">
         <ul className="explist">
           <li>{this.props.allExp.company}</li>
@@ -31,7 +34,8 @@ class ExperiencesPosted extends React.Component {
           <button id="deleteexperience" onClick={this.delete}>Delete</button>
         </div>
       </div>
-        )
+        ) : (<div>Your Post was Deleted!</div>)
+        
 }
 
 }

@@ -6,18 +6,23 @@ import ExperienceUpdateForm from './ExperienceUpdateForm';
 
 class ExperienceModal extends React.Component {
     state = {
-        modalOpen: true
+        modalOpen: true,
+        experiences: ""
     }
     render() {
+        console.log("Testing Experience", this.props.experience);
         return (
             <>
             {this.state.modalOpen && 
             <Modal isOpen={this.props.open} toclose={this.props.close}> 
             <div>
-                <div className="edit-experience-text">Edit Experiences</div>
-                <FontAwesomeIcon onClick={this.props.setmodal} icon={faTimes} />
+                <div className="edit-experience-text">Add Experiences</div>
+                <FontAwesomeIcon onClick={()=>this.props.setmodal(this.props.experience)} icon={faTimes} />
             </div>
-            <ExperienceUpdateForm closeModal={this.props.setmodal} experiences={this.props.experience} />
+                <ExperienceUpdateForm
+                  closeModal={this.props.setmodal}
+                 
+                />
           </Modal>}
             </>
         );

@@ -230,7 +230,7 @@ code {
 } */
 
 .fapencilbio {
-  margin-left: 93%;
+  float: right;
 }
 
 .fapenciltoeditform{
@@ -253,8 +253,20 @@ code {
 }
 
 .dottedboxes {
-  border: dotted rgb(164, 162, 162);
   margin-bottom: 2%;
+  margin-top: 2%;
+}
+
+#dottedboxone {
+  border: dotted rgb(164, 162, 162);
+}
+
+#dottedboxtwo {
+  border: dotted rgb(164, 162, 162);
+}
+
+.closewindow {
+  float: right;
   margin-top: 2%;
 }
 
@@ -273,8 +285,8 @@ code {
   list-style: none;
 }
 
-.editexperience {
-  position: fixed;
+#editexperience {
+  /* position: absolute; */
   float: right;
 }
 
