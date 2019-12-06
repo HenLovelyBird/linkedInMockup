@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Input , Modal, ModalBody, ModalHeader, ModalFooter, Button } from 'reactstrap';
-import { request } from 'http';
+//import { request } from 'http';
 
 
 class NewsPictureModel extends Component {
@@ -8,6 +8,7 @@ class NewsPictureModel extends Component {
         text: '',
         selectedFile: null,
         modalOpenPicture: true,
+        isUpload: false
     
     }
     handleFile(e){
@@ -18,14 +19,15 @@ class NewsPictureModel extends Component {
     let username = "user21"
         let password = "2ruxa4MRJdUgg6cz"
         let token = btoa(username + ":" + password)
+        const url= "https://striveschool.herokuapp.com/api/posts/"
         const body =new FormData();
         body.append('post',this.state.selectedFile)
         const request = new XMLHttpRequest();
-        request.open("POST","https://striveschool.herokuapp.com/api/posts/5de9841d9551d100175b5217")
+        request.open("POST",url);
         request.setRequestHeader( "Authorization", "Basic " + token )
         request.send(body)
+        this.setState({isPost: true})
       }
-
 
     setModalPicture = (event) => {
       event.preventDefault();
@@ -41,7 +43,7 @@ class NewsPictureModel extends Component {
       }
   }
         render(){
-            return (
+            return this.state.isUpload === false? (
               <>
                 {this.state.modalOpenPicture &&  <>
                 <Modal isOpen={this.props.open} toclose={this.props.close} >
@@ -58,7 +60,7 @@ class NewsPictureModel extends Component {
                 </Modal>
                 </>}
                 </>
-            );
+            ): ('');
           }
         }
 export default NewsPictureModel;
