@@ -62,11 +62,18 @@ code {
     monospace;
 }
 .search-div{
-  width: 426px;
+  width: 200px;
 }
+.navbar-toggler { 
+  border-color: lightgreen;
+  padding: 5px 5px;
+} 
+.navbar-toggler-icon { 
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 128, 0, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); 
+} 
 .search-input{
-  width: 280px;
-  height:34px;
+  width: 200px;
+  height:29px;
   padding: 0px 8px 0px 28px;
   margin-top: 8px;
 }
@@ -96,9 +103,9 @@ code {
   font-size: 20px;
 }
 .nav-item-div{
-  width: 80px;
+  width: 65px;
   color: white;
-  font-size: 12px;
+  font-size: 10px;
   text-align: center;
   margin: 8px 0px 0px;
 }
@@ -119,7 +126,7 @@ code {
   border-radius: 50%;
 }
 .nav-icon{
-  font-size: 20px;
+  font-size: 16px;
   color: rgba(255,255,255,0.5)
 }
 .nav{
@@ -143,7 +150,7 @@ code {
 #main-search-unput{
   border-radius: 0px !important;
   border: 0px solid white !important;
-  height: 40px !important;
+  height: 29px !important;
 }
 .linkedin-icon{
   margin-left: 50px;
@@ -293,8 +300,4 @@ code {
 #deleteexperience {
   margin-left: 2%!important;
   background-color: rgb(44, 121, 145);
-}
-toast{
-  width: "400%" !important;
-  height: "400%" !important;
 }

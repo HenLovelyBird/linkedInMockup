@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import 'react-image-crop/dist/ReactCrop.css';
 import './index.css';
-import Main from './Components/Main';
+import App from './Components/App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<Main />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
