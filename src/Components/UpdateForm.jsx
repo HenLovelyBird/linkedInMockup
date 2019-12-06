@@ -66,7 +66,7 @@ class UpdateForm extends React.Component {
         <Input
                   id="submitBtn"
                   type="submit"
-                  class="btn btn-succes"
+                  class="btn btn-success"
                   value="SAVE"
                   onClick={this.props.closeModal}
               />

@@ -45,7 +45,7 @@ class Profile extends React.Component {
                 />
               )}
             </div> 
-
+              
             <FontAwesomeIcon
               onClick={this.setModal}
               className="fapenciltoeditform"
