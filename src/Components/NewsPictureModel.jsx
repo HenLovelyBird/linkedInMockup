@@ -1,52 +1,62 @@
 import React, { Component } from 'react';
 import {Input , Modal, ModalBody, ModalHeader, ModalFooter, Button } from 'reactstrap';
+import { request } from 'http';
 
 
 class NewsPictureModel extends Component {
     state = {
-        modalOpen: true,
-        setModel: false,
         text: '',
-        selectedFile: null
+        selectedFile: null,
+        modalOpenPicture: true,
+    
     }
-      // fileSelectedHandler= event =>{
-        //   this.setState({ event.target.files[0]}) 
-     //  }
+    handleFile(e){
+          this.setState({selectedFile: e.target.files[0]})
 
-      // fileUploadHandler = () =>{
-        //   const fd = new FormData();
+    }
+    fileUpload = () =>{
+    let username = "user21"
+        let password = "2ruxa4MRJdUgg6cz"
+        let token = btoa(username + ":" + password)
+        const body =new FormData();
+        body.append('post',this.state.selectedFile)
+        const request = new XMLHttpRequest();
+        request.open("POST","https://striveschool.herokuapp.com/api/posts/5de9841d9551d100175b5217")
+        request.setRequestHeader( "Authorization", "Basic " + token )
+        request.send(body)
+      }
 
-           //axio.post('https://striveschool.herokuapp.com/api/profile/user21/picture');
 
-     //  }
-        setModal = () => {
-        if(this.state.modalOpen === true){
+    setModalPicture = (event) => {
+      event.preventDefault();
+
+      if (this.state.modalOpenPicture === true) {
           this.setState({
-                modalOpen: false
-            })
-        } else if (this.state.modalOpen === false){
-            this.setState({
-            modalOpen: true
-  
-            })
-        }
-    }
+              modalOpenPicture: false
+          })
+      } else if (this.state.modalOpenPicture === false) {
+          this.setState({
+              modalOpenPicture: true
+          })
+      }
+  }
         render(){
             return (
               <>
-                {this.state.modalOpen  &&  <>
+                {this.state.modalOpenPicture &&  <>
                 <Modal isOpen={this.props.open} toclose={this.props.close} >
                   <ModalHeader color="blue">Upload Picture</ModalHeader>
                   <ModalBody>
-                  <Input type="file" onChange={this.fileSelectedHandler}/>
-                  <Button onClick={this.fileUploadHandler}>Upload</Button>
+                  <Input type="file" name="file" onChange={(e) => this.handleFile(e)}/>
                  </ModalBody>
                   <ModalFooter>
-                 <Button onClick={this.setModal} color="primary">Close</Button>
+                 <Button onClick={this.setModalPicture} color="primary">Close</Button>
+                 <Button onClick={this.fileUpload} color="primary">Upload</Button>
                  
                     {/*<Button  onClick={this.post} color="primary">Post</Button>*/}
                   </ModalFooter>
-                </Modal></>}
+                </Modal>
+                </>}
                 </>
             );
           }

@@ -15,8 +15,8 @@ class NewsFeedBox extends Component {
         
     }
     delete = async()=>{
-        let username = "user16";
-        let password = "c9WEUxMS294hN6fF";
+        let username = "user21";
+        let password = "2ruxa4MRJdUgg6cz";
         let token = btoa(username + ":" + password);
         let response = await fetch("https://striveschool.herokuapp.com/api/posts/" + this.props.newsData._id,{
               method: "DELETE",
@@ -39,7 +39,10 @@ class NewsFeedBox extends Component {
                     <ToastHeader>
                         <div>{this.props.newsData.username}</div>
                     </ToastHeader>
-                    <ToastBody>{this.props.newsData.text}</ToastBody>
+                    <ToastBody>{this.props.newsData.text}
+                    <img src={this.props.newsData.image} />
+                    </ToastBody>
+                    
                     <button onClick={this.delete}>Delete</button>
                 </Toast>
             </Col>
