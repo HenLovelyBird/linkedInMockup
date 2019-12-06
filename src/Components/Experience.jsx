@@ -28,15 +28,20 @@ class Experience extends React.Component {
     console.log(this.state.experiences);
     return (
       <>
-        <Container fluid style={{ height: "75vh" }}>
+        <Container d-flex flex style={{ height: "75vh" }}>
           <Row h-100>
-            <div d-flex classNam="col justify-contents-center pt-5">
+            <Col className="md-12 pt-2">
+            {/* <div d-flex className="col-md-12 justify-contents-center pt-5">
               <div
                 d-flex
                 flex
                 className="d-flex flex justify-content-between align-items-center pt-2"
-              >
+              > */}
                 <h3>Experience</h3>
+                {this.state.experiences &&
+                this.state.experiences.map((experience, index) => (
+                    <ExperiencesPosted allExp={experience} key={index} />))};
+                </Col>
 
                 {this.state.modalOpen && (
                   <ExperienceModal
@@ -45,18 +50,18 @@ class Experience extends React.Component {
                     open={this.state.modalOpen}
                   />
                 )}
-                <FontAwesomeIcon
+               
+               
+              {/* </div> */}
+                  <Col>
+                  <FontAwesomeIcon
                   onClick={this.setModal}
                   className="editexperience"
                   icon={faPencilAlt}
                 />
-              </div>
-
-              {this.state.experiences &&
-                this.state.experiences.map((experience, index) => (
-                    <ExperiencesPosted allExp={experience} key={index} />))};
-                
-            </div>
+                </Col>
+            {/* </div> */}
+            
           </Row>
         </Container>
       </>

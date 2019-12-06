@@ -274,8 +274,8 @@ code {
 }
 
 .editexperience {
-  position: absolute;
-  margin-left: 53%;
+  position: fixed;
+  float: right;
 }
 
 #deleteexperience {

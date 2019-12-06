@@ -79,8 +79,10 @@ class Profile extends React.Component {
 
   }
     componentDidUpdate = async(prevProps, prevState) => {
-        this.fetchingNewPic()
+        // if this.state.profile.image 
+        // this.fetchingNewPic()
     }
+    
     fetchingNewPic = async() => {
         let username = "user16";
         let password = "c9WEUxMS294hN6fF";
