@@ -26,18 +26,24 @@ class CurrentUserPage extends React.Component {
         loading: true,
         profile: '',
         expirience: '',
-        users: ''
-     }
+        users: '',
+    }
     render() { 
         return ( 
             <Row>
-                <Col md="8 mt-3">
-                {this.state.loading ? <><Loader color="#007ACC" height={40} width={40} type="TailSpin" style={loaderStyle} /> </> : 
-                <div style={mainBoxStyle}> <CurrentProfileHeader userData={this.state.profile} /> </div>}
-                {this.state.loading ? <><Loader color="#007ACC" height={40} width={40} type="TailSpin" style={loaderStyle} /> </> :  this.state.expirience && <div className="mt-3 px-5 py-4" style={mainBoxStyle}> <h3 style={h3Style}>Experience</h3> {this.state.expirience
-                .map((u,i) => ( <CurrentExpirience usExpData={u} key={i} />))}</div>}
+                <Col md="7 mt-3">
+                {this.state.loading ? 
+                    <><Loader color="#007ACC" height={40} width={40} type="TailSpin" style={loaderStyle} /> </> : 
+                    <div style={mainBoxStyle}> <CurrentProfileHeader userData={this.state.profile} /> </div>
+                }
+                {this.state.loading ? 
+                    <><Loader color="#007ACC" height={40} width={40} type="TailSpin" style={loaderStyle} /> </> :  
+                    this.state.expirience && <div className="mt-3 px-5 py-4" style={mainBoxStyle}> <h3 style={h3Style}>Experience</h3> 
+                    {this.state.expirience
+                    .map((u,i) => ( <CurrentExpirience usExpData={u} key={i} />))}</div>
+                }
                 </Col>
-                <Col md="4 mt-3">
+                <Col md="5 mt-3">
                     {this.state.users && <div className="p-3">{this.state.users.map((u,i)=>(<AllUsersList user={u} key={i} />))}</div>}
                 </Col>
             </Row>
@@ -53,7 +59,6 @@ class CurrentUserPage extends React.Component {
         if (prevProps.match.params.userId !== this.props.match.params.userId){
             this.fetchingCurrentUser()
             this.fetchingExpirience()
-
         }
     }
 

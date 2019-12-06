@@ -22,10 +22,7 @@ class Experience extends React.Component {
     }
   };
 
-
-
   render() {
-    console.log(this.state.experiences);
     return (
       <>
         <Container fluid style={{ height: "75vh" }}>

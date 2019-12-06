@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
 import ErrorMessage from './Alerts/ErrorMessage'
+
 let divStyle ={
     position: "absolute",
     top: "28%",
@@ -50,7 +51,9 @@ class Login extends Component {
             }
         })
         if(response.ok){
-            this.props.history.push('/Profile')
+            // this.props.history.push('/Profile')
+            console.log("response ok")
+            this.props.handleLogin()
         } else {
             this.setState({
                 error: true

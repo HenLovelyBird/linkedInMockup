@@ -1,5 +1,5 @@
 import React from 'react';
-import {Nav, NavItem,InputGroupAddon, Input, NavLink,InputGroupText, Navbar, NavbarBrand, InputGroup, Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
+import {Nav, Collapse, Col, Row, NavbarToggler, NavItem,InputGroupAddon, Input, NavLink,InputGroupText, Navbar, NavbarBrand, InputGroup, Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import {Link} from 'react-router-dom'
@@ -13,7 +13,14 @@ class Navigation extends React.Component {
    state = {
       dropdownOpen: false,
       setDropdownOpen: false,
-      srch: ''
+      srch: '',
+      isOpen: false
+   }
+
+   handleCollapse = () => {
+      this.setState({
+         isOpen: !this.state.isOpen
+      })
    }
 
    toggleDropdown = () => {
@@ -34,7 +41,6 @@ class Navigation extends React.Component {
      let username = "user16"
      let password = "c9WEUxMS294hN6fF"
      let token = btoa(username + ":" + password)
-     console.log(ev.target.value)
      if(ev.target.value.length > 4){
       let response = await fetch("https://striveschool.herokuapp.com/api/profile/" + ev.target.value, {
          method: "GET",
@@ -50,26 +56,26 @@ class Navigation extends React.Component {
    }
     render() {
       return (
-         <Navbar className="nav-top">
-            <Nav className="mr-auto"> 
+         <Navbar className="nav-top" expand="lg">
+            <Nav style={{margin: "0 auto"}}> 
                <NavbarBrand href="/">
                   <FontAwesomeIcon className="linkedin-icon" icon={faLinkedin}/>
                </NavbarBrand>
                <NavItem>
                   <div className="search-div">
                      <InputGroup className="search-input">
-                        <InputGroupAddon  addonType="prepend">
-                           <InputGroupText>                    
-                              <FontAwesomeIcon className="icon-search" icon={faSearch}/>
-                           </InputGroupText>
-                        </InputGroupAddon>
                         <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleDropdown}>
                            <DropdownToggle
                            tag="span"
                            data-toggle="dropdown"
                            aria-expanded={this.dropdownOpen}
                            >
-                              <Input onChange={this.handleSearch} className="main-input" id="main-search-unput" placeholder="Search" />
+                              <InputGroupAddon  addonType="prepend">
+                                 <InputGroupText>                    
+                                    <FontAwesomeIcon className="icon-search" icon={faSearch}/>
+                                    <Input onChange={this.handleSearch} className="main-input" id="main-search-unput" placeholder="Search" />
+                                 </InputGroupText>
+                              </InputGroupAddon>
                            </DropdownToggle>
                            <DropdownMenu>
                               <ProfilesDropDown searchQuery={this.state.srch} toggleProfileDropdown={this.toggleDropdown}/>
@@ -78,6 +84,8 @@ class Navigation extends React.Component {
                      </InputGroup>
                   </div>
                </NavItem>
+               <NavbarToggler onClick={this.handleCollapse} />
+               <Collapse isOpen={this.state.isOpen} navbar>
                <NavItem>
                   <div className="nav-item-div">
                      <FontAwesomeIcon className="nav-icon" icon={faHome}/>
@@ -118,7 +126,7 @@ class Navigation extends React.Component {
                      </Link>
                   </div>
                </NavItem>
-               <div className="vl"></div>
+               <div className="vl d-lg-inline-block d-none"></div>
                <NavItem>
                   <div className="nav-item-div">
                      <FontAwesomeIcon className="nav-icon" icon={faTh}/>
@@ -131,6 +139,7 @@ class Navigation extends React.Component {
                      <NavLink href="#">Learning</NavLink>
                   </div>
                </NavItem>
+               </Collapse>
             </Nav>
          </Navbar>
       ); 

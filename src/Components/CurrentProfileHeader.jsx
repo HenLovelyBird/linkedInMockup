@@ -18,21 +18,19 @@ let userImgStyle = {
     boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
 }
 
-class CurrentProfileHeader extends Component {
-    state = {  }
-    render() { 
-        return ( 
-            <>
-                <div style={divStyle}></div>
-                {this.props.userData.image ? <img style={userImgStyle} src={this.props.userData.image} alt=""/> : <img style={userImgStyle} src="https://www.legalniewsieci.pl/!data/newsy/news_1982.jpg" /> }
-                <div className="user-info-current-profile-header">
-                    <h4>{this.props.userData.name} {this.props.userData.surname}</h4>
-                    <p style={{margin: "5px 0px"}}>{this.props.userData.title}</p>
-                    <p style={{margin: "5px 0px"}}>{this.props.userData.area}</p>
-                </div>
-                </>
-         );
-    }
+const CurrentProfileHeader = (props) => {
+const userData = props.userData
+    return ( 
+        <>
+            <div style={divStyle}></div>
+            {userData.image ? <img style={userImgStyle} src={userData.image} alt=""/> : <img style={userImgStyle} src="https://www.legalniewsieci.pl/!data/newsy/news_1982.jpg" /> }
+            <div className="user-info-current-profile-header">
+                <h4>{userData.name} {userData.surname}</h4>
+                <p style={{margin: "5px 0px"}}>{userData.title}</p>
+                <p style={{margin: "5px 0px"}}>{userData.area}</p>
+            </div>
+        </>
+    );
 }
- 
+
 export default CurrentProfileHeader;
