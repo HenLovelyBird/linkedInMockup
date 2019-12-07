@@ -19,11 +19,11 @@ class NewsPictureModel extends Component {
     let username = "user21"
         let password = "2ruxa4MRJdUgg6cz"
         let token = btoa(username + ":" + password)
-        const url= "https://striveschool.herokuapp.com/api/posts/"
+        const url= "https://striveschool.herokuapp.com/api/posts/" + this.props.postId
         const body =new FormData();
         body.append('post',this.state.selectedFile)
         const request = new XMLHttpRequest();
-        request.open("POST",url);
+        request.open("POST",url );
         request.setRequestHeader( "Authorization", "Basic " + token )
         request.send(body)
         this.setState({isPost: true})

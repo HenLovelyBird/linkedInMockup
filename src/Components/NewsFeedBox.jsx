@@ -28,7 +28,6 @@ class NewsFeedBox extends Component {
          
     }
     render() {
-        console.log(this.props)
         return this.state.isDelete === false? ( 
             <Col md="4">
                  <Toast style={Toaststyle}>

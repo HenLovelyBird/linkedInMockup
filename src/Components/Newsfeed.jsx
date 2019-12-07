@@ -55,6 +55,17 @@ class Newsfeed extends React.Component {
         }
     }
     componentDidMount = async () => {
+        this.fetchingNews()    
+    };
+    
+   // componentDidUpdate = (prevProps,prevState) => {
+    //    if(this.state.newsfeed !== prevState.newsfeed) {
+    //     this.fetchingNews();
+//}
+  //  }
+       
+
+    fetchingNews= async () => {
         let username = "user21"
         let password = "2ruxa4MRJdUgg6cz"
         let token = btoa(username + ":" + password)
@@ -65,13 +76,12 @@ class Newsfeed extends React.Component {
             }
         })
         let news = await response.json()
-        console.log(news);
         this.setState({
-            Newsfeed: news.reverse()
+            newsfeed: news.reverse()
         })
-    };
+    }
+    
     render() {
-        console.log(this.state);
         return (
             <>
                 <Container flex id="newsfeed-toast">
@@ -95,7 +105,7 @@ class Newsfeed extends React.Component {
                          </ToastBody>
                         </Toast>
                     </div>
-                    <Row> {this.state.Newsfeed && this.state.Newsfeed.map((news, index) =>
+                    <Row> {this.state.newsfeed && this.state.newsfeed.map((news,index) =>
                         <NewsFeedBox newsData={news} key={index} />
                     )}
                     </Row>
