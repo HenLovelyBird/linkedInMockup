@@ -8,7 +8,6 @@ class NewsPictureModel extends Component {
         text: '',
         selectedFile: null,
         modalOpenPicture: true,
-        isUpload: false
     
     }
     handleFile(e){
@@ -24,9 +23,12 @@ class NewsPictureModel extends Component {
         body.append('post',this.state.selectedFile)
         const request = new XMLHttpRequest();
         request.open("POST",url );
-        request.setRequestHeader( "Authorization", "Basic " + token )
-        request.send(body)
-        this.setState({isPost: true})
+        request.setRequestHeader( "Authorization", "Basic " + token );
+        request.onload = ()=> this.props.fetchingNews();
+        request.send(body);
+        this.setState({
+          modalOpenPicture: false
+      })
       }
 
     setModalPicture = (event) => {
@@ -43,7 +45,7 @@ class NewsPictureModel extends Component {
       }
   }
         render(){
-            return this.state.isUpload === false? (
+            return (
               <>
                 {this.state.modalOpenPicture &&  <>
                 <Modal isOpen={this.props.open} toclose={this.props.close} >
@@ -60,7 +62,7 @@ class NewsPictureModel extends Component {
                 </Modal>
                 </>}
                 </>
-            ): ('');
+            )
           }
         }
 export default NewsPictureModel;

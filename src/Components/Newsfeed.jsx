@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container, Toast, ToastHeader, ToastBody, Row } from 'reactstrap';
-import { FaPencilAlt, FaCameraRetro } from "react-icons/fa";
+import { Container, Toast, ToastHeader, ToastBody, Row, Spinner } from 'reactstrap';
+import { FaPencilAlt,} from "react-icons/fa";
 import NewsModel from './NewsModel';
 import NewsFeedBox from './NewsFeedBox';
 import NewsPictureModel from './NewsPictureModel';
@@ -8,10 +8,6 @@ import NewsPictureModel from './NewsPictureModel';
 let Toaststyle = {
     width: "900px",
     height: "250px"
-}
-
-let camera = {
-    width: "50px",
 }
 
 let pencil = {
@@ -24,7 +20,8 @@ class Newsfeed extends React.Component {
         newsfeed: '',
         modalOpen: false,
         modalOpenPicture: false,
-        dropdownOpen: false
+        dropdownOpen: false,
+        isLoading: false
     }
 
     setModal = (event) => {
@@ -66,6 +63,8 @@ class Newsfeed extends React.Component {
        
 
     fetchingNews= async () => {
+        this.setState({isLoading: true})// setting to load
+        console.log("i'm also called");
         let username = "user21"
         let password = "2ruxa4MRJdUgg6cz"
         let token = btoa(username + ":" + password)
@@ -77,11 +76,13 @@ class Newsfeed extends React.Component {
         })
         let news = await response.json()
         this.setState({
-            newsfeed: news.reverse()
+            newsfeed: news.reverse(),
+            isLoading: false // after loading is finished it disappear's 
         })
     }
     
     render() {
+        
         return (
             <>
                 <Container flex id="newsfeed-toast">
@@ -89,15 +90,13 @@ class Newsfeed extends React.Component {
                         <div> {this.state.modalOpen && <NewsModel
                             setmodal={this.setModal} open={this.state.modalOpen} fetchingNews={this.fetchingNews}  />}
                         </div>{/* exportong the function(fetching news) to other components */}
-                        <div>{this.state.modalOpenPicture && <NewsPictureModel
-                            setModalPicture={this.setModalPicture} open={this.state.modalOpenPicture} />}
-                        </div>
+                        
+                        
                         <Toast style={Toaststyle}>
                             <ToastHeader>
                                 Start a Post
                                 <div className="mx-5 float-right">
-                                    <FaPencilAlt size={25} style={pencil} onClick={this.setModal} />
-                                    <FaCameraRetro size={25} style={camera} onClick={this.setModalPicture} />
+                                    <FaPencilAlt size={25} style={pencil} onClick={this.setModal}  />
                                 </div>
                             </ToastHeader>
                             <ToastBody>
@@ -105,10 +104,11 @@ class Newsfeed extends React.Component {
                          </ToastBody>
                         </Toast>
                     </div>
-                    <Row> {this.state.newsfeed && this.state.newsfeed.map((news,index) =>
-                        <NewsFeedBox newsData={news} key={index} />
+                    {(this.state.isLoading) ? (<Spinner animation="border" />) : (
+                    <Row> {this.state.newsfeed &&  this.state.newsfeed.map((news,index) =>
+                        <NewsFeedBox fetchingNews={this.fetchingNews} newsData={news} key={index} />
                     )}
-                    </Row>
+                    </Row>)}
                 </Container>
             </>
         );
