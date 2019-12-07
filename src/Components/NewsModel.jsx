@@ -42,7 +42,8 @@ class  NewsModel extends React.Component {
       )
       console.log(response)
       this.setState({isPost: true})
-      return response
+      this.props.fetchingNews()// this is function from Newsfeed importing to this Component so that refreshing is not needed 
+      return response// and this.props is used when we import from other component
     }
   }
   render(){

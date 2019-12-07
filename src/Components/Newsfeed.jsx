@@ -58,11 +58,11 @@ class Newsfeed extends React.Component {
         this.fetchingNews()    
     };
     
-   // componentDidUpdate = (prevProps,prevState) => {
-    //    if(this.state.newsfeed !== prevState.newsfeed) {
-    //     this.fetchingNews();
+    //componentDidUpdate = (prevProps,prevState) => {
+     //if(this.state.newsfeed !== prevState.newsfeed) {
+      //this.fetchingNews();
 //}
-  //  }
+  //}
        
 
     fetchingNews= async () => {
@@ -86,9 +86,9 @@ class Newsfeed extends React.Component {
             <>
                 <Container flex id="newsfeed-toast">
                     <div className="p-4 bg-info my-4 fluid">
-                        <div>{this.state.modalOpen && <NewsModel
-                            setmodal={this.setModal} open={this.state.modalOpen} />}
-                        </div>
+                        <div> {this.state.modalOpen && <NewsModel
+                            setmodal={this.setModal} open={this.state.modalOpen} fetchingNews={this.fetchingNews}  />}
+                        </div>{/* exportong the function(fetching news) to other components */}
                         <div>{this.state.modalOpenPicture && <NewsPictureModel
                             setModalPicture={this.setModalPicture} open={this.state.modalOpenPicture} />}
                         </div>
