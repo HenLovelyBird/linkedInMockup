@@ -5,7 +5,9 @@ import NewsPictureModel from './NewsPictureModel';
 import {FaCameraRetro } from "react-icons/fa";
 let Toaststyle ={
     width : "100%",
-    height : "400px"
+    height : "400px",
+    padding : "5px",
+    margin : "5px"
 }
 
 let camera = {
@@ -52,7 +54,7 @@ class NewsFeedBox extends Component {
     }
     render() {
         return this.state.isDelete === false? ( 
-            <Col md="4">
+            <Col md="3">
                  <Toast style={Toaststyle}>
                 <div className="mx-5 float-right"> 
                 <FaCameraRetro  style={camera} onClick={this.setModalPicture} />

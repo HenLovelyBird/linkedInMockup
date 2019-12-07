@@ -90,19 +90,8 @@ class Newsfeed extends React.Component {
                         <div> {this.state.modalOpen && <NewsModel
                             setmodal={this.setModal} open={this.state.modalOpen} fetchingNews={this.fetchingNews}  />}
                         </div>{/* exportong the function(fetching news) to other components */}
-                        
-                        
-                        <Toast style={Toaststyle}>
-                            <ToastHeader>
-                                Start a Post
-                                <div className="mx-5 float-right">
-                                    <FaPencilAlt size={25} style={pencil} onClick={this.setModal}  />
-                                </div>
-                            </ToastHeader>
-                            <ToastBody>
-                                Write a Text
-                         </ToastBody>
-                        </Toast>
+                        Post Your Idea's <FaPencilAlt size={25} style={pencil} onClick={this.setModal}  />
+                       
                     </div>
                     {(this.state.isLoading) ? (<Spinner animation="border" />) : (
                     <Row> {this.state.newsfeed &&  this.state.newsfeed.map((news,index) =>
